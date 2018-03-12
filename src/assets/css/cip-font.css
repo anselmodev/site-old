@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'cip-font';
+    src: url('../fonts/Exo20-Regular.eot');
+    src: url('../fonts/Exo20-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Exo20-Regular.woff2') format('woff2'),
+        url('../fonts/Exo20-Regular.woff') format('woff'),
+        url('../fonts/Exo20-Regular.ttf') format('truetype'),
+        url('../fonts/Exo20-Regular.svg#Exo2.0-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
