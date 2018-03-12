@@ -190,6 +190,23 @@
   top: 104px;
   left: 57px;
 }
+
+/*Logo Text*/
+._logo_text{
+  font-size: 85px;
+  top: 255px;
+  left: 0px;
+  z-index: 3;
+}
+
+/*Logo SubText*/
+._logo_subtext{
+  font-size: 30px;
+  top: 430px;
+  left: 350px;
+  z-index: 3;
+}
+
 /* ########## Logo Sizes ########## */
 ._logo_cip_xs{
   -webkit-transform: scale(.1);

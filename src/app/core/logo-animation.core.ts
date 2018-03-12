@@ -1,39 +1,65 @@
 import * as $ from 'jquery';
 
+let isReady = null;
+
+/* Initial Class Animation */
+const animationInit = () => {
+  // hide logo base
+  $('._logo_cip').show();
+  $('._logo_tag_left').removeClass(' _logo_tag_transform_left_1');
+  $('._logo_tag_right').removeClass(' _logo_tag_transform_right_1');
+};
+
+/* Remove Class Animation */
+const animationRemove = () => {
+  $('._logo_pixel_center').removeClass('_logo_cip_transform_center_out _logo_cip_transform_center_in _logo_cip_center_0');
+  $('._logo_tag_left').removeClass('_logo_tag_left_0 _logo_tag_transform_left_0');
+  $('._logo_tag_right').removeClass('_logo_tag_right_0 _logo_tag_transform_right_0');
+  $('._logo_pixel_back').removeClass('bounceIn1 bounceOut');
+};
+
 /* Pixels Back Animation IN - OUT */
 const pixelsBackAnimationIn = () => {
   return new Promise ((resolve, reject) => {
-    if (!resolve()) { reject(false); }
-
     let count = 0;
+
     const timer = (delay, element) => {
       const pixTimer = setTimeout(() => {
-        $(element).fadeIn().addClass('bounceIn2');
+        $(element).fadeIn().addClass('bounceIn1');
         count += 1;
         if (count === 14) {
+          const timerResetBounce = setTimeout(() => {
+            animationRemove();
+            clearTimeout(timerResetBounce);
+          }, 1000);
           resolve();
         }
         clearTimeout(pixTimer);
       }, delay);
     };
-    for (let $i = 0; $i < 14; $i++) { timer(100 * $i, `.lpx${$i}`); }
+    for (let $i = 0; $i < 14; $i++) { timer(50 * $i, `.lpx${$i}`); }
   });
 };
 const pixelsBackAnimationOut = (delayOut = 0) => {
   return new Promise ((resolve, reject) => {
-    if (!resolve()) { reject(false); }
-
     let count = 0;
+    isReady = false;
+
     const timerDelay = setTimeout(() => {
 
-      $('._logo_pixel_back').removeClass('bounceIn2');
      const timer = (delay, element) => {
        const pixTimer = setTimeout(() => {
         $(element).addClass('bounceOut').fadeOut('slow');
         clearTimeout(pixTimer);
         count += 1;
         if (count === 14) {
+
+          const timerResetBounce = setTimeout(() => {
+            $('._logo_pixel_back').removeClass('bounceOut');
+            clearTimeout(timerResetBounce);
+          }, 1000);
           resolve();
+
         }
       }, delay);
     };
@@ -43,25 +69,28 @@ const pixelsBackAnimationOut = (delayOut = 0) => {
   });
 };
 
-/* Tag Animation IN */
+/* Tag Animation IN - OUT */
 const tagAnimationIn = () => {
   return new Promise ((resolve, reject) => {
-    $('._logo_tag_left').addClass('_logo_tag_transform_left_1');
-    $('._logo_tag_right').addClass('_logo_tag_transform_right_1');
+    $('._logo_tag_left').show().addClass('_logo_tag_transform_left_1');
+    $('._logo_tag_right').show().addClass('_logo_tag_transform_right_1');
     const timerTag = setTimeout(() => {
       clearTimeout(timerTag);
       resolve();
     }, 700);
-
   });
 };
 const tagAnimationOut = () => {
   return new Promise ((resolve, reject) => {
 
     const timerPixels = setTimeout(() => {
-      $('._logo_tag_left').addClass('_logo_tag_transform_left_0');
-      $('._logo_tag_right').addClass('_logo_tag_transform_right_0');
-      $('._logo_tag_left, ._logo_tag_right').removeClass('_logo_tag_transform_left_1 _logo_tag_transform_right_1');
+      $('._logo_tag_left').addClass('_logo_tag_transform_left_0').fadeOut();
+      $('._logo_tag_right').addClass('_logo_tag_transform_right_0').fadeOut();
+      const resetTrasnform = setTimeout(() => {
+        // $('._logo_tag_left').removeClass('_logo_tag_transform_left_1');
+        // $('._logo_tag_right').removeClass('_logo_tag_transform_right_1');
+        clearTimeout(resetTrasnform);
+      }, 1000);
       resolve();
       clearTimeout(timerPixels);
     }, 700);
@@ -69,76 +98,107 @@ const tagAnimationOut = () => {
   });
 };
 
-/* Pixel Center Animation IN */
-const pixelCenterIn = (logoElement, delay = 0 ) => {
+/* Pixel Center Animation IN - OUT */
+const pixelCenterIn = (delay = 0 ) => {
+  const logoCenter = $('._logo_pixel_center');
+
   return new Promise ((resolve, reject) => {
-
-    const logoCenter = $(logoElement);
-
+    isReady = false;
     logoCenter.addClass('_logo_cip_center_0').hide();
+    $('._logo_pixel_back, ._logo_text, ._logo_subtext').hide();
     $('._logo_tag_left').addClass('_logo_tag_left_0');
     $('._logo_tag_right').addClass('_logo_tag_right_0');
-    $('._logo_pixel_back').hide();
+    animationInit();
 
     const timerCenter1 = setTimeout(() => {
-      logoCenter.removeClass('_logo_cip_transform_center_in');
+      logoCenter.show().addClass('_logo_cip_transform_center_in');
       const timerCenter2 = setTimeout(() => {
-        logoCenter.show().addClass('_logo_cip_transform_center_in');
-        const timerCenter3 = setTimeout(() => {
-          // Remove Class OUT and Timers
-          logoCenter.removeClass('_logo_cip_transform_center_out');
-          clearTimeout(timerCenter1);
-          clearTimeout(timerCenter2);
-          clearTimeout(timerCenter3);
-          resolve();
-        }, 400);
-      }, 100);
+        clearTimeout(timerCenter1);
+        clearTimeout(timerCenter2);
+        resolve();
+      }, 400);
     }, delay);
   });
 };
-const pixelCenterOut = (logoElement) => {
+const pixelCenterOut = () => {
+  const logoCenter = $('._logo_pixel_center');
+
   return new Promise ((resolve, reject) => {
+    const timerCenter1 = setTimeout(() => {
+      logoCenter.addClass('_logo_cip_transform_center_out');
+      clearTimeout(timerCenter1);
 
-    const logoCenter = $('._logo_pixel_center');
-    logoCenter.removeClass('_logo_cip_transform_center_out');
-
-      const timerCenter1 = setTimeout(() => {
-        logoCenter.addClass('_logo_cip_transform_center_out');
-        clearTimeout(timerCenter1);
-        // Remove class IN
-        logoCenter.removeClass('_logo_cip_center_0 _logo_cip_transform_center_in');
+      const clearTransform = setTimeout(() => {
+        animationRemove();
         resolve();
-      }, 100);
+      }, 800);
 
+    }, 100);
+
+  });
+};
+
+/* Pixel Center Animation IN - OUT */
+const textFadeIn = () => {
+  return new Promise((resolve, reject) => {
+    $('._logo_text').fadeIn();
+    const timeText1 = setTimeout(() => {
+      $('._logo_subtext').fadeIn();
+      resolve();
+    }, 200);
+  });
+};
+const textFadeOut = () => {
+  return new Promise((resolve, reject) => {
+    $('._logo_text, ._logo_subtext').fadeOut();
   });
 };
 
 
 /* ########## Logo Animation ########## */
 const LogoAnimation = {
-
   // ------------ Show
   show: (delay?) => {
-    pixelCenterIn('._logo_pixel_center', delay).then(() => {
+    if (!isReady && isReady !== null) {
+      return false;
+    }
+    pixelCenterIn(delay).then(() => {
       tagAnimationIn().then(() => {
-        pixelsBackAnimationIn();
+        pixelsBackAnimationIn().then(() => {
+          textFadeIn().then(() => {
+            isReady = true;
+          });
+        });
       });
     });
   },
 
-   // ------------ Hide
+  // ------------ Hide
   hide: (delay?) => {
+    if (!isReady && isReady !== null) {
+      return false;
+    }
+    textFadeOut();
     pixelsBackAnimationOut(delay).then(() => {
       tagAnimationOut().then(() => {
-        pixelCenterOut('._logo_pixel_center');
+        pixelCenterOut().then(() => {
+          $('._logo_cip').hide();
+          isReady = true;
+        });
       });
     });
+  },
+  // ------------ Reset
+  reset: () => {
+    $('._logo_pixel_center').removeClass('_logo_cip_transform_center_out _logo_cip_transform_center_in _logo_cip_center_0');
+    $('._logo_tag_left').removeClass('_logo_tag_left_0 _logo_tag_transform_left_0 _logo_tag_transform_left_1');
+    $('._logo_tag_right').removeClass('_logo_tag_right_0 _logo_tag_transform_right_0 _logo_tag_transform_right_1');
+    $('._logo_pixel_back').removeClass('bounceIn1 bounceOut');
   }
-
 };
 
 /* ########## Pixel Center Shining ########## */
-const LogoPixelCenterShining = (interval, intervalTimes: number = 0) => {
+const LogoPixelShining = (interval, intervalTimes: number = 0) => {
   let count = 0;
   const intervalCenterShining = setInterval(() => {
 
@@ -165,4 +225,4 @@ const LogoPixelsBackAnimation = (interval, intervalTimes: number = 0) => {
   }, interval);
 };
 
-export { LogoAnimation, LogoPixelCenterShining, LogoPixelsBackAnimation };
+export { LogoAnimation };

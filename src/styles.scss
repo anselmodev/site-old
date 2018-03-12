@@ -105,7 +105,8 @@ li{list-style: none;}
 .cip--tx-normal {text-transform: none !important; }
 .cip--tx-bold {font-weight: 700; }
 .cip--tx-italic {font-style: italic; }
-.cip--tx-shadow {text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4) !important; }
+.cip--tx-shadow { text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4) !important; }
+.cip--tx-shadow2{ text-shadow: -3px 10px 21px rgba(0, 0, 0, 0.4) !important; }
 .cip--tx-smooth {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 .cip--tx-decor-none {text-decoration: none !important; }
 .cip--tx-decor-underline {text-decoration: underline; }
@@ -202,13 +203,13 @@ $transparent-black-hover:  rgba(0, 0, 0, 0.3);
 $transparent-black-active:  rgba(0, 0, 0, 0.6);
 
 /*Textos*/
-.cip--txc-cip-blue {color: $cip-blue; }
-.cip--txc-cip-blue-2 {color: $cip-blue-2; }
-.cip--txc-cip-blue-3 {color: $cip-blue-3; }
-.cip--txc-cip-yellow {color: $cip-yellow; }
-.cip--txc-cip-yellow-2 {color: $cip-yellow-2; }
-.cip--txc-cip-yellow-3 {color: $cip-yellow-3; }
-.cip--txc-cip-yellow-4 {color: $cip-yellow-4; }
+.cip--txc-logo-blue {color: $cip-blue; }
+.cip--txc-logo-blue-2 {color: $cip-blue-2; }
+.cip--txc-logo-blue-3 {color: $cip-blue-3; }
+.cip--txc-logo-yellow {color: $cip-yellow; }
+.cip--txc-logo-yellow-2 {color: $cip-yellow-2; }
+.cip--txc-logo-yellow-3 {color: $cip-yellow-3; }
+.cip--txc-logo-yellow-4 {color: $cip-yellow-4; }
 
 .cip--txc-red {color: $red; }
 .cip--txc-red-light {color: $red-light; }

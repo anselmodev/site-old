@@ -1,8 +1,6 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
-
 import * as $ from 'jquery';
-
-import { LogoAnimation, LogoPixelCenterShining, LogoPixelsBackAnimation } from '../../core/logo-animation.core';
+import { LogoAnimation } from '../../core/logo-animation.core';
 
 @Component({
   selector: 'app-logo-cip',
@@ -10,11 +8,11 @@ import { LogoAnimation, LogoPixelCenterShining, LogoPixelsBackAnimation } from '
   styleUrls: ['./logo-cip.component.scss']
 })
 export class LogoCipComponent implements OnInit, AfterViewInit {
-  @Input() logoImage:  String = '';
+  @Input() logoImage:      String = '';
   @Input() type:           String = '';
   @Input() size:           String = '';
   @Input() animation:      any    = null;
-  @Input() animationDelay: any    = null;
+  @Input() animationDelay: any    =  null;
 
   logoSize: String;
   sizeImage: any;
@@ -40,6 +38,8 @@ export class LogoCipComponent implements OnInit, AfterViewInit {
       if (this.animation === 'out') {
         LogoAnimation.hide(this.animationDelay);
       }
+    } else {
+      LogoAnimation.reset();
     }
   }
 
