@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
-import * as $ from 'jquery';
-import { LogoAnimation } from '../../core/logo-animation.core';
+// import * as $ from 'jquery';
+
+import { LogoAnimation } from '../../core/animation/logo.animation';
 
 @Component({
   selector: 'app-logo-cip',
@@ -8,18 +9,29 @@ import { LogoAnimation } from '../../core/logo-animation.core';
   styleUrls: ['./logo-cip.component.scss']
 })
 export class LogoCipComponent implements OnInit, AfterViewInit {
-  @Input() logoImage:      String = '';
-  @Input() type:           String = '';
-  @Input() size:           String = '';
-  @Input() animation:      any    = null;
-  @Input() animationDelay: any    =  null;
+  @Input() logoImage:    String = '';
+  @Input() type:         String = '';
+  @Input() size:         String = '';
+  @Input() logoId:       String = '_logo_cip';
+  @Input() animation:    any    = null;
+  @Input() delayShow:    any    = 0;
+  @Input() delayHide:    any    = 0;
+  @Input() showText:     any    = '';
+  @Input() setWatermark: any    = '';
 
+  pixelsBack = ['lpx0', 'lpx1', 'lpx2', 'lpx3', 'lpx4', 'lpx5', 'lpx6', 'lpx7', 'lpx8', 'lpx9', 'lpx10', 'lpx11', 'lpx12', 'lpx13'];
   logoSize: String;
   sizeImage: any;
+  startStop: Boolean = false;
+  Mylogo;
+  watermark: any;
 
   constructor() { }
 
   ngOnInit() {
+    // Watermark
+    this.watermark = (this.setWatermark === 'true' ? '_logo_opacity01' : '');
+
     // Set Logo Image
     this.sizeImage = (this.logoImage ? {
       'width': `${this.logoImage}px`
@@ -30,27 +42,32 @@ export class LogoCipComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    // Se não for logo com imagem
     if (!this.sizeImage) {
-      // Set Animation
-      if (this.animation === 'in') {
-        LogoAnimation.show(this.animationDelay);
+
+      this.Mylogo = new LogoAnimation(this.logoId, 1, this.showText);
+
+      // Mostrar logo
+      if (this.animation === 'show') {
+        const delayShowLogo = setTimeout(() => {
+
+          this.Mylogo.show();
+          clearTimeout(delayShowLogo);
+
+        }, this.delayShow);
       }
-      if (this.animation === 'out') {
-        LogoAnimation.hide(this.animationDelay);
+      // Esconder logo
+      if (this.animation === 'hide') {
+        const delayHideLogo = setTimeout(() => {
+
+          this.Mylogo.hide();
+          clearTimeout(delayHideLogo);
+
+        }, this.delayHide);
       }
     } else {
-      LogoAnimation.reset();
+      // code
     }
   }
-
-
-  // ----- Logo OUT
-  logoAnimationOut(delayOut: number = 0) {
-    LogoAnimation.hide(delayOut);
-  }
-  logoAnimationIn(delayOut: number = 0) {
-    LogoAnimation.show(delayOut);
-  }
-
 
 }

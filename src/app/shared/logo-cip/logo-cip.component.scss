@@ -1,315 +1,46 @@
 /* Logo CodeInPixel ( Base Div or Image Logo ) */
-._logo_cip_image{
-  min-width: 50px;
-  min-height: 50px;
+._logo_cip_image{ min-width: 100px; min-height: 100px;
 }
-._logo_cip{
-  min-width: 10px;
-  min-height: 10px;
-}
-/*Logo Pixel Center*/
-._logo_pixel_center{
-  width: 185px;
-  height: 185px;
-  top: 108px;
-  left: 132px;
-  z-index: 3;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-._logo_pixel_center_img{
-  top: -38px;
-  left: -39px;
-}
-._logo_cip_center_0{
-  width: 0px;
-  height: 0px;
-  top: 198px;
-  left: 222px;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-/*Logo Tags Left and Right*/
-._logo_tag_left{
-  width: 195px;
-  height: 195px;
-  top: 104px;
-  left: 42px;
-  z-index: 2;
-}
-._logo_tag_right{
-  width: 195px;
-  height: 195px;
-  top: 104px;
-  left: 212px;
-  z-index: 2;
-}
-._logo_tag_left_bd{
-  width: 37px;
-  height: 195px;
-  top: 0;
-  left: 0;
-}
-._logo_tag_right_bd{
-  width: 37px;
-  height: 195px;
-  top: 0;
-  right: 0;
-}
-._logo_tag_bottom_bd{
-  width: 195px;
-  height: 37px;
-  bottom: 0;
-  left: 0;
-}
-._logo_tag_top_bd{
-  width: 195px;
-  height: 37px;
-  top: 0;
-  right: 0;
-}
-._logo_tag_left_0{
-  top: 104px;
-  left: 126px;
-  -webkit-transform: scale(0) rotate(45deg);
-  -moz-transform: scale(0) rotate(45deg);
-  -ms-transform: scale(0) rotate(45deg);
-  -o-transform: scale(0) rotate(45deg);
-  transform: scale(0) rotate(45deg);
-}
-._logo_tag_right_0{
-  top: 104px;
-  left: 126px;
-  -webkit-transform: scale(0) rotate(45deg);
-  -moz-transform: scale(0) rotate(45deg);
-  -ms-transform: scale(0) rotate(45deg);
-  -o-transform: scale(0) rotate(45deg);
-  transform: scale(0) rotate(45deg);
-}
-/*Logo Pixels Back*/
-._logo_pixel_back{
-  position: absolute;
-  z-index: 1;
-}
-._logo_pixel_back_color{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(46, 70, 92, 0.28);
-  border: 1px solid rgba(46, 70, 92, 0.1);
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-._logo_pixel_back_min{
-  width: 65px;
-  height: 65px;
-}
-._logo_pixel_back_big{
-  width: 108px;
-  height: 108px;
-}
-.lpx0{
-  width: 100px;
-  height: 100px;
-  top: 20px;
-  left: 192px;
-}
-.lpx1{
-  width: 100px;
-  height: 100px;
-  top: 283px;
-  left: 192px;
-}
-.lpx2{
-  width: 105px;
-  height: 105px;
-  top: 246px;
-  left: 248px;
-}
-.lpx3{
-  width: 83px;
-  height: 83px;
-  top: 43px;
-  left: 253px;
-}
-.lpx4{
-  width: 83px;
-  height: 83px;
-  top: 124px;
-  left: 17px;
-}
-.lpx5{
-  top: 41px;
-  left: 114px;
-}
-.lpx6{
-  top: 123px;
-  left: 141px;
-}
-.lpx7{
-  top: 209px;
-  left: 370px;
-}
-.lpx8{
-  top: 280px;
-  left: 328px;
-}
-.lpx9{
-  top: 79px;
-  left: 309px;
-}
-.lpx10{
-  width: 95px;
-  height: 88px;
-  top: 161px;
-  left: 277px;
-}
-.lpx11{
-  width: 90px;
-  height: 90px;
-  top: 163px;
-  left: 105px;
-}
-.lpx12{
-  width: 118px;
-  height: 118px;
-  top: 224px;
-  left: 57px;
-}
-.lpx13{
-  width: 118px;
-  height: 118px;
-  top: 104px;
-  left: 57px;
-}
+._logo_cip{ min-width: 50px; min-height: 50px; }
+/* Logo Pixel Center */
+._logo_pixel_center{ width: 498px; height: 498px; top: -225px; left: -225px; z-index: 3; background-color: #f29c27; }
 
-/*Logo Text*/
-._logo_text{
-  font-size: 85px;
-  top: 255px;
-  left: 0px;
-  z-index: 3;
-}
+/* Logo Tags Left and Right */
+._logo_tag_left{ width: 565px; height: 565px; top: -260px; left: -470px; z-index: 2; }
+._logo_tag_right{ width: 565px; height: 565px; top: -260px; left: -47px; z-index: 2; }
+._logo_tag_left_bd{ width: 100px; height: 100%; top: 0; left: 0; }
+._logo_tag_bottom_bd{ width: 100%; height: 100px; bottom: 0; left: 0; }
+._logo_tag_right_bd{ width: 100px; height: 100%; top: 0; right: 0; }
+._logo_tag_top_bd{ width: 100%; height: 100px; top: 0; right: 0; }
 
-/*Logo SubText*/
-._logo_subtext{
-  font-size: 30px;
-  top: 430px;
-  left: 350px;
-  z-index: 3;
-}
+/* Transform Defaults */
+._logo_rotation45{ -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
+._logo_opacity01 {opacity: 0.1 !important; }
+/* Logo Pixels Back */
+._logo_pixel_back{ position: absolute; z-index: 1; }
+._logo_pixel_back_color{ width: 100%; height: 100%; background-color: rgba(46, 70, 92, 0.28); border: 2px solid rgba(46, 70, 92, 0.35); }
+.lpx0{ width: 185px; height: 185px; top: -424px; left: -307px; }
+.lpx1{ width: 185px; height: 185px; top: -195px; left: -234px; }
+.lpx2{ width: 185px; height: 185px; top: 46px; left: 406px; }
+.lpx3{ width: 185px; height: 185px; top: 244px; left: 290px; }
+.lpx4{ width: 225px; height: 225px; top: -187px; left: -577px; }
+.lpx5{ width: 225px; height: 225px; top: -416px; left: 85px; }
+.lpx6{ width: 275px; height: 275px; top: 258px; left: -84px; }
+.lpx7{ width: 275px; height: 275px; top: -94px; left: -331px; }
+.lpx8{ width: 275px; height: 275px; top: -96px; left: 132px; }
+.lpx9{ width: 275px; height: 275px; top: -484px; left: -85px; }
+.lpx10{ width: 295px; height: 295px; top: -314px; left: 250px; }
+.lpx11{ width: 295px; height: 295px; top: 145px; left: 70px; }
+.lpx12{ width: 325px; height: 325px; top: 94px; left: -469px; }
 
-/* ########## Logo Sizes ########## */
-._logo_cip_xs{
-  -webkit-transform: scale(.1);
-  -moz-transform: scale(.1);
-  -ms-transform: scale(.1);
-  -o-transform: scale(.1);
-  transform: scale(.1);
-}
-._logo_cip_sm{
-  -webkit-transform: scale(.2);
-  -moz-transform: scale(.2);
-  -ms-transform: scale(.2);
-  -o-transform: scale(.2);
-  transform: scale(.2);
-}
-._logo_cip_md{
-  -webkit-transform: scale(.5);
-  -moz-transform: scale(.5);
-  -ms-transform: scale(.5);
-  -o-transform: scale(.5);
-  transform: scale(.5);
-}
-._logo_cip_lg{
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-}
-._logo_cip_xl{
-  -webkit-transform: scale(2);
-  -moz-transform: scale(2);
-  -ms-transform: scale(2);
-  -o-transform: scale(2);
-  transform: scale(2);
-}
-/* ########## LOGO TRANSFORM ANIMATION ########## */
-._logo_cip_transform_center_in{
-  width: 185px;
-  height: 185px;
-  top: 108px;
-  left: 132px;
-  -webkit-transform: rotate(45deg) scale(1);
-  -moz-transform: rotate(45deg) scale(1);
-  -ms-transform: rotate(45deg) scale(1);
-  -o-transform: rotate(45deg) scale(1);
-  transform: rotate(45deg) scale(1);
-  -webkit-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -moz-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -o-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-._logo_cip_transform_center_out{
-  width: 0px;
-  height: 0px;
-  top: 198px;
-  left: 222px;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -moz-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -o-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-._logo_tag_transform_left_1{
-  top: 104px;
-  left: 42px;
-  -webkit-transform: scale(1) rotate(45deg);
-  -moz-transform: scale(1) rotate(45deg);
-  -ms-transform: scale(1) rotate(45deg);
-  -o-transform: scale(1) rotate(45deg);
-  transform: scale(1) rotate(45deg);
-  -webkit-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -moz-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -o-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-._logo_tag_transform_right_1{
-  top: 104px;
-  left: 212px;
-  -webkit-transform: scale(1) rotate(45deg);
-  -moz-transform: scale(1) rotate(45deg);
-  -ms-transform: scale(1) rotate(45deg);
-  -o-transform: scale(1) rotate(45deg);
-  transform: scale(1) rotate(45deg);
-  -webkit-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -moz-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -o-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-._logo_tag_transform_left_0, ._logo_tag_transform_right_0{
-  top: 104px;
-  left: 126px;
-  -webkit-transform: scale(0) rotate(45deg);
-  -moz-transform: scale(0) rotate(45deg);
-  -ms-transform: scale(0) rotate(45deg);
-  -o-transform: scale(0) rotate(45deg);
-  transform: scale(0) rotate(45deg);
-  -webkit-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -moz-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -o-transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: .5s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
+/* Logo Text and subtext */
+._logo_text{ font-size: 225px; top: 205px; left: -586px; z-index: 3; }
+._logo_subtext{ font-size: 60px; top: 664px; left: 394px; z-index: 3; }
+
+/* Logo Sizes */
+._logo_cip_xxs{ -webkit-transform: scale(.05); -moz-transform: scale(.05); -ms-transform: scale(.05); -o-transform: scale(.05); transform: scale(.05); }
+._logo_cip_xs{ -webkit-transform: scale(.1); -moz-transform: scale(.1); -ms-transform: scale(.1); -o-transform: scale(.1); transform: scale(.1); }
+._logo_cip_sm{ -webkit-transform: scale(.2); -moz-transform: scale(.2); -ms-transform: scale(.2); -o-transform: scale(.2); transform: scale(.2); }
+._logo_cip_md{ -webkit-transform: scale(.3); -moz-transform: scale(.3); -ms-transform: scale(.3); -o-transform: scale(.3); transform: scale(.3); }
+._logo_cip_lg{ -webkit-transform: scale(.5); -moz-transform: scale(.5); -ms-transform: scale(.5); -o-transform: scale(.5); transform: scale(.5); }
+._logo_cip_xl{ -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); transform: scale(1); }

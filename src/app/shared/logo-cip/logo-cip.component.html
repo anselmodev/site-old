@@ -1,12 +1,16 @@
-<!-- Logo CodeInPixel -->
-<div class="_logo_cip_image cip--pos-relative" [ngStyle]="sizeImage" *ngIf="sizeImage">
+<!-- Logo-icon IMAGE -->
+<div class="_logo_cip_image cip--pos-relative" [ngStyle]="sizeImage" *ngIf="sizeImage" id="{{ logoId }}">
   <img src="assets/img/codeinpixel-logo-icon.min.png" alt="" class="cip--responsive-img">
 </div>
-<div class="_logo_cip cip--pos-relative {{ logoSize }}"  *ngIf="!sizeImage">
-  <div class="_logo_pixel_center cip--shadow-z24 cip--rotate-45 cip--pos-absolute cip--bgc-transp cip--ovf">
-      <img src="assets/img/pixel-center.png" alt="" class="_logo_pixel_center_img cip--pos-absolute cip--rotate-45">
+
+<!-- Logo Animate -->
+<div class="_logo_cip cip--bgc-transp {{ logoSize }} {{ watermark }}" *ngIf="!sizeImage" id="{{ logoId }}">
+  <!-- Pixel Center -->
+  <div class="_logo_pixel_center cip--shadow-z24 cip--pos-absolute cip--bgc-transp cip--ovf _logo_rotation45">
+    <img src="assets/img/pixel-center.png" alt="">
   </div>
 
+  <!-- Tags -->
   <div class="_logo_tag_left cip--rotate-45 cip--pos-absolute">
     <div class="_logo_tag_bottom_bd cip--bgc-logo-blue cip--shadow-z14 cip--pos-absolute"></div>
     <div class="_logo_tag_left_bd cip--bgc-logo-blue cip--pos-absolute"></div>
@@ -16,49 +20,12 @@
     <div class="_logo_tag_top_bd cip--bgc-logo-blue cip--pos-absolute"></div>
   </div>
 
-  <div class="_logo_pixel_back lpx0">
+  <!-- PixelBack -->
+  <div *ngFor="let lpx of pixelsBack" class="_logo_pixel_back _logo_rotation45 {{ lpx }}">
     <div class="_logo_pixel_back_color"></div>
   </div>
-  <div class="_logo_pixel_back lpx1">
-    <div class="_logo_pixel_back_color"></div>
-  </div>
-  <div class="_logo_pixel_back lpx2">
-    <div class="_logo_pixel_back_color"></div>
-  </div>
-  <div class="_logo_pixel_back lpx3">
-    <div class="_logo_pixel_back_color"></div>
-  </div>
-  <div class="_logo_pixel_back lpx4">
-    <div class="_logo_pixel_back_color"></div>
-  </div>
-  <div class="_logo_pixel_back _logo_pixel_back_min lpx5">
-    <div class="_logo_pixel_back_color"></div>
-  </div>
-  <div class="_logo_pixel_back _logo_pixel_back_min lpx6">
-    <div class="_logo_pixel_back_color"></div>
-  </div>
-  <div class="_logo_pixel_back _logo_pixel_back_min lpx7">
-    <div class="_logo_pixel_back_color"></div>
-  </div>
-  <div class="_logo_pixel_back _logo_pixel_back_min lpx8">
-    <div class="_logo_pixel_back_color"></div>
-  </div>
-  <div class="_logo_pixel_back _logo_pixel_back_big lpx9">
-    <div class="_logo_pixel_back_color"></div>
-  </div>
-  <div class="_logo_pixel_back _logo_pixel_back_big lpx10">
-    <div class="_logo_pixel_back_color"></div>
-  </div>
-  <div class="_logo_pixel_back _logo_pixel_back_big lpx11">
-    <div class="_logo_pixel_back_color"></div>
-  </div>
-  <div class="_logo_pixel_back _logo_pixel_back_big lpx12">
-    <div class="_logo_pixel_back_color"></div>
-  </div>
-  <div class="_logo_pixel_back lpx13">
-    <div class="_logo_pixel_back_color"></div>
-  </div>
+
+  <!-- Text -->
   <p class="_logo_text cip--pos-absolute cip--txc-logo-blue cip--tx-shadow2">CodeInPixel</p>
   <small class="_logo_subtext cip--pos-absolute cip--txc-logo-blue cip--tx-shadow2">Studios</small>
 </div>
-<!-- Logo CodeInPixel -->
