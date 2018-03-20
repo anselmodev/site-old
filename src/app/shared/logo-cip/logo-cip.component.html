@@ -1,12 +1,24 @@
-<!-- Logo-icon IMAGE -->
-<div class="_logo_cip_image cip--pos-relative" [ngStyle]="sizeImage" *ngIf="sizeImage" id="{{ logoId }}">
-  <img src="assets/img/codeinpixel-logo-icon.min.png" alt="" class="cip--responsive-img">
-</div>
+<!--
+################# DECLARANDO LOGOTIPO #################
+
+  Logo Parameters:
+  <app-logo-cip #varElemento
+      logoId="meu_logo"
+      size="xxs , xs , sm , md , lg ou xl"
+      showText="true"
+      animation="show , hide"
+      duration="1 ( em segundos )"
+      delay="2000 ( em milissegundos )"
+      setWatermark="true ou false">
+  </app-logo-cip>
+
+################# DECLARANDO LOGOTIPO #################
+-->
 
 <!-- Logo Animate -->
 <div class="_logo_cip cip--bgc-transp {{ logoSize }} {{ watermark }}" *ngIf="!sizeImage" id="{{ logoId }}">
   <!-- Pixel Center -->
-  <div class="_logo_pixel_center cip--shadow-z24 cip--pos-absolute cip--bgc-transp cip--ovf _logo_rotation45">
+  <div class="_logo_center_pixel cip--shadow-z24 cip--pos-absolute cip--bgc-transp cip--ovf _logo_rotation45">
     <img src="assets/img/pixel-center.png" alt="">
   </div>
 
@@ -26,6 +38,6 @@
   </div>
 
   <!-- Text -->
-  <p class="_logo_text cip--pos-absolute cip--txc-logo-blue cip--tx-shadow2">CodeInPixel</p>
-  <small class="_logo_subtext cip--pos-absolute cip--txc-logo-blue cip--tx-shadow2">Studios</small>
+  <p class="_logo_text cip--pos-absolute cip--txc-logo-blue cip--tx-shadow2" *ngIf="showText">CodeInPixel</p>
+  <small class="_logo_subtext cip--pos-absolute cip--txc-logo-blue cip--tx-shadow2" *ngIf="showText">Studios</small>
 </div>

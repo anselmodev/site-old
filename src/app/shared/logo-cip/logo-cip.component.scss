@@ -3,7 +3,7 @@
 }
 ._logo_cip{ min-width: 50px; min-height: 50px; }
 /* Logo Pixel Center */
-._logo_pixel_center{ width: 498px; height: 498px; top: -225px; left: -225px; z-index: 3; background-color: #f29c27; }
+._logo_center_pixel{ width: 498px; height: 498px; top: -225px; left: -225px; z-index: 3; background-color: #f29c27; }
 
 /* Logo Tags Left and Right */
 ._logo_tag_left{ width: 565px; height: 565px; top: -260px; left: -470px; z-index: 2; }
@@ -15,7 +15,10 @@
 
 /* Transform Defaults */
 ._logo_rotation45{ -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
+
+/* Resset Values */
 ._logo_opacity01 {opacity: 0.1 !important; }
+
 /* Logo Pixels Back */
 ._logo_pixel_back{ position: absolute; z-index: 1; }
 ._logo_pixel_back_color{ width: 100%; height: 100%; background-color: rgba(46, 70, 92, 0.28); border: 2px solid rgba(46, 70, 92, 0.35); }
