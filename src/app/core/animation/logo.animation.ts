@@ -17,7 +17,7 @@ const pixelShine = () => {
     ease: this.easeEff2,
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
     borderColor: 'rgba(255, 255, 255, 0.3)',
-    repeat: 9,
+    repeat: 20,
     repeatDelay: 5
   }, .05);
   this[`tl3${this.elementId}`].staggerTo( this.getPixelbackColor, 2, {
@@ -25,7 +25,7 @@ const pixelShine = () => {
     backgroundColor: 'rgba(46, 70, 92, 0.28)',
     borderColor: 'rgba(46, 70, 92, 0.35)',
     delay: 1.5,
-    repeat: 9,
+    repeat: 20,
     repeatDelay: 5
   }, .05);
 };

@@ -17,8 +17,6 @@ li{list-style: none;}
 /*Width percent e Height percent*/
 .cip--w-5 { width: 5%; } .cip--w-10 { width: 10%; } .cip--w-15 { width: 15%; } .cip--w-20 { width: 20%; } .cip--w-25 { width: 25%; } .cip--w-30 { width: 30%; } .cip--w-35 { width: 35%; } .cip--w-40 { width: 40%; } .cip--w-45 { width: 45%; } .cip--w-50 { width: 50%; } .cip--w-55 { width: 55%; } .cip--w-60 { width: 60%; } .cip--w-65 { width: 65%; } .cip--w-70 { width: 70%; } .cip--w-75 { width: 75%; } .cip--w-80 { width: 80%; } .cip--w-85 { width: 85%; } .cip--w-90 { width: 90%; } .cip--w-95 { width: 95%; } .cip--w-100 { width: 100%; } .cip--h-5 { height: 5%; } .cip--h-10 { height: 10%; } .cip--h-15 { height: 15%; } .cip--h-20 { height: 20%; } .cip--h-25 { height: 25%; } .cip--h-30 { height: 30%; } .cip--h-35 { height: 35%; } .cip--h-40 { height: 40%; } .cip--h-45 { height: 45%; } .cip--h-50 { height: 50%; } .cip--h-55 { height: 55%; } .cip--h-60 { height: 60%; } .cip--h-65 { height: 65%; } .cip--h-70 { height: 70%; } .cip--h-75 { height: 75%; } .cip--h-80 { height: 80%; } .cip--h-85 { height: 85%; } .cip--h-90 { height: 90%; } .cip--h-95 { height: 95%; } .cip--h-100 { height: 100%; }
 
-
-
 /*Bloqueio de Elementos*/
 .cip--disabled {pointer-events: none; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 .cip--disabled-opac {opacity: 1; pointer-events: none; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
@@ -63,6 +61,9 @@ li{list-style: none;}
 .cip--shadow-z22{ box-shadow:0 10px 14px -6px rgba(0,0,0,.2),0 22px 35px 3px rgba(0,0,0,.14),0 8px 42px 7px rgba(0,0,0,.12) }
 .cip--shadow-z23{ box-shadow:0 11px 14px -7px rgba(0,0,0,.2),0 23px 36px 3px rgba(0,0,0,.14),0 9px 44px 8px rgba(0,0,0,.12) }
 .cip--shadow-z24{ box-shadow:0 11px 15px -7px rgba(0,0,0,.2),0 24px 38px 3px rgba(0,0,0,.14),0 9px 46px 8px rgba(0,0,0,.12) }
+.cip--shadow-z24-white{
+  box-shadow: 0 11px 15px 3px rgba(255, 255, 255, -0.86), 0 24px 38px -16px rgba(255, 255, 255, 0.14), 0 9px 46px -2px rgba(255, 255, 255, 0.19)
+ }
 
 /*Sombras Vermelhas*/
 .cip--shadow1-red{-webkit-box-shadow: 0 2px 5px 0 rgba(224, 25, 25,.16), 0 2px 10px 0 rgba(224, 25, 25,.12); box-shadow: 0 2px 5px 0 rgba(224, 25, 25,.16), 0 2px 10px 0 rgba(224, 25, 25,.12); }
@@ -103,9 +104,13 @@ li{list-style: none;}
 .cip--tx-upsercase {text-transform: uppercase!important; }
 .cip--tx-captalize {text-transform: capitalize!important; }
 .cip--tx-normal {text-transform: none !important; }
-.cip--tx-bold {font-weight: 700; }
+.cip--tx-bold {font-weight: 700 !important; }
 .cip--tx-italic {font-style: italic; }
+.cip--tx-left { text-align: left; }
+.cip--tx-right {text-align: right; }
+.cip--tx-center {text-align: center;}
 .cip--tx-shadow { text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4) !important; }
+.cip--tx-shadow-white { text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.4) !important; }
 .cip--tx-shadow2{ text-shadow: -3px 10px 21px rgba(0, 0, 0, 0.4) !important; }
 .cip--tx-smooth {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 .cip--tx-decor-none {text-decoration: none !important; }
@@ -135,7 +140,11 @@ button:focus{ outline: none; }
 .cip--fsz-12{ font-size: 12px; }
 .cip--fsz-13{ font-size: 13px; }
 .cip--fsz-14{ font-size: 14px; }
-.cip--fsz-15{ font-size: 15px; }
+.cip--fsz-16{ font-size: 16px; }
+.cip--fsz-18{ font-size: 18px; }
+.cip--fsz-20{ font-size: 20px; }
+.cip--fsz-25{ font-size: 25px; }
+.cip--fsz-30{ font-size: 30px; }
 
 /*Rotation*/
 .cip--rotate-0{ -ms-transform: rotate(0deg); /* IE 9 */ -webkit-transform: rotate(0deg); /* Safari */ transform: rotate(0deg); }
@@ -369,9 +378,33 @@ nav ul a span.badge { display: inline-block; float: none; margin-left: 4px; line
 .cip--btn-outline:hover.cip--btn-success:hover{ background-color: lighten($green, 10%); color: $white; border-color: lighten($green, 10%); }
 .cip--btn-outline:active.cip--btn-success:active{ background-color: darken($green, 10%); color: $white; border-color: darken($green, 10%);}
 
+.cip--btn-grey{ background-color: $grey-light; color: $grey-dark; }
+.cip--btn-grey:hover{ background-color: $grey; color: #474747; }
+.cip--btn-grey:active{ background-color: $grey-dark; color: #cccccc; }
+
 .cip--btn-transparent{ background-color: $transparent; color: $grey-dark; }
 .cip--btn-transparent:hover{ background-color: $transparent; color: #7a7a7a; }
 .cip--btn-transparent:active{ background-color: $transparent; color: #474747; }
+
+.cip--btn-transparent-info{ background-color: $transparent; color: $blue-dark; }
+.cip--btn-transparent-info:hover{ background-color: $blue-light; color: $blue-dark; }
+.cip--btn-transparent-info:active{ background-color: $blue; color: $blue-dark; }
+
+.cip--btn-transparent-warn{ background-color: $transparent; color: $orange-dark; }
+.cip--btn-transparent-warn:hover{ background-color: $orange-light; color: $orange-dark; }
+.cip--btn-transparent-warn:active{ background-color: $orange; color: $orange-dark; }
+
+.cip--btn-transparent-danger{ background-color: $transparent; color: $red-dark; }
+.cip--btn-transparent-danger:hover{ background-color: $red-light; color: $orange-dark; }
+.cip--btn-transparent-danger:active{ background-color: $red; color: $white; }
+
+.cip--btn-transparent-success{ background-color: $transparent; color: $green-dark; }
+.cip--btn-transparent-success:hover{ background-color: $green-light; color: $green-dark; }
+.cip--btn-transparent-success:active{ background-color: $green; color: $green-dark; }
+
+.cip--btn-transparent-grey{ background-color: $transparent; color: $grey-dark; }
+.cip--btn-transparent-grey:hover{ background-color: #f4f4f4; color: #474747; }
+.cip--btn-transparent-grey:active{ background-color: $grey; color: #3d3d3d; }
 
 .cip--btn-transparent-white{ background-color: $transparent; color: $white; }
 .cip--btn-transparent-white:hover{ background-color: $transparent-white-hover; color: $white; }

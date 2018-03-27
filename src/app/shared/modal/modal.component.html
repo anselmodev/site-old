@@ -1,0 +1,22 @@
+<div class="_modal_cip cip--w-100 cip--h-100 cip--pos-relative">
+  <div class="_modal_cip_overlay cip--w-100 cip--h-100 cip--disabled cip--bgc-black cip--opac-3"></div>
+  <div class="_modal_cip_container cip--absolute-center cip--shadow5 cip--rad4">
+      <img src="assets/svg/info2.svg" alt="Informação" title="Informação" id="_modal_icon" class="cip--pos-absolute">
+    <!-- Header -->
+    <div class="_modal_cip_header cip--pos-relative">
+      <h2 class="cip--tx-center cip--no-margin cip--fsz-20 cip--padding-10">
+        <span id="_modal_title" class="cip--tx-smooth"></span>
+      </h2>
+    </div>
+
+    <!-- Content -->
+    <div class="_modal_cip_content cip--pos-relative cip--no-margin cip--padding-10" id="_modal_content"></div>
+
+    <!-- Footer -->
+    <div class="_modal_cip_footer cip--w-100 cip--no-margin cip--padding-10 cip--pos-absolute">
+      <button class="cip--btn cip--float-right cip--tx-bold cip--tx-smooth" id="_modal_btn_success" (click)="modalOnSuccess()"></button>
+      <button class="cip--btn  cip--float-right cip--margin-lr-10 cip--tx-bold cip--tx-smooth" id="_modal_btn_cancel" (click)="modalOnCancel()"></button>
+    </div>
+
+  </div>
+</div>

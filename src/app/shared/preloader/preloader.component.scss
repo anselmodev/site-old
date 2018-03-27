@@ -1,0 +1,29 @@
+._preloader_main{
+  z-index: 50000;
+}
+._preloader_door_top{
+  top: -50%;
+  left: 0;
+  background-color: rgba(226, 114, 114, 0.651);
+  -webkit-transform: skew(0, 20deg);
+  -moz-transform: skew(0, 20deg);
+  -ms-transform: skew(0, 20deg);
+  -o-transform: skew(0, 20deg);
+  transform: skew(0, 20deg);
+}
+._preloader_door_bottom{
+  background-color: rgba(114, 149, 226, 0.651);
+  bottom: -50%;
+  left: 0;
+  -webkit-transform: skew(0, 20deg);
+  -moz-transform: skew(0, 20deg);
+  -ms-transform: skew(0, 20deg);
+  -o-transform: skew(0, 20deg);
+  transform: skew(0, 20deg);
+}
+
+._preloader_loader{
+  width: 200px;
+  height: 150px;
+  background-color: #efefef;
+}

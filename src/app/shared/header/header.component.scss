@@ -1,9 +1,9 @@
 .cip_header{
   width: 100%;
-  background-color: rgba(204, 204, 204, 0.562);
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
 }
 
 .cip_header_nav{

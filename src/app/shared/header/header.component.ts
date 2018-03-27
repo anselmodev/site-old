@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
-  selector: 'app-header',
+  selector: 'cip-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })

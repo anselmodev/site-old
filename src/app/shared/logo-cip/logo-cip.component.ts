@@ -6,7 +6,7 @@ import * as $ from 'jquery';
 import { LogoAnimation } from '../../core/animation/logo.animation';
 
 @Component({
-  selector: 'app-logo-cip',
+  selector: 'cip-logo',
   templateUrl: './logo-cip.component.html',
   styleUrls: ['./logo-cip.component.scss']
 })

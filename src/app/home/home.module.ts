@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home.component';
-import { LogoCipComponent } from '../shared/logo-cip/logo-cip.component';
 
 // Routes Home Component
 const homeRoutes: Routes = [{ path: '', component: HomeComponent }];
 
 @NgModule({
-  declarations: [HomeComponent, LogoCipComponent],
-  imports: [CommonModule, RouterModule.forChild(homeRoutes)],
+  declarations: [HomeComponent],
+  imports: [CommonModule, RouterModule.forChild(homeRoutes), SharedModule],
   exports: [],
   providers: []
 })
