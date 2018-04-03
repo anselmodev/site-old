@@ -3,19 +3,19 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { SharedModule } from '../shared/shared.module';
-import { HomeComponent } from './home.component';
+import { Error404Component } from './error404.component';
 
 // Routes Home Component
-const homeRoutes: Routes = [{ path: '', component: HomeComponent }];
+const error404Routes: Routes = [{ path: '', component: Error404Component }];
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [Error404Component],
   imports: [
     CommonModule,
-    RouterModule.forChild(homeRoutes),
+    RouterModule.forChild(error404Routes),
     SharedModule
   ],
   exports: [],
   providers: []
 })
-export class HomeModule {}
+export class Error404Module {}

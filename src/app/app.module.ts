@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import localePt from '@angular/common/locales/pt';
 
+import { PreloaderService } from './core/service/preloader.service';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -35,7 +36,8 @@ registerLocaleData(localePt);
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
-    HttpClientModule
+    HttpClientModule,
+    PreloaderService
   ],
   bootstrap: [AppComponent]
 })

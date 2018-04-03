@@ -17,7 +17,7 @@ export class ModalComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() { }
 
   modalOnSuccess() {
-    ModalAnimation.onSuccess();
+    ModalAnimation.onConfirm();
   }
   modalOnCancel() {
     ModalAnimation.onCancel();

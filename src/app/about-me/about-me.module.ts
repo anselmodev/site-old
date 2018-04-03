@@ -3,19 +3,19 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { SharedModule } from '../shared/shared.module';
-import { HomeComponent } from './home.component';
+import { AboutMeComponent } from './about-me.component';
 
 // Routes Home Component
-const homeRoutes: Routes = [{ path: '', component: HomeComponent }];
+const aboutRoutes: Routes = [{ path: '', component: AboutMeComponent }];
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [AboutMeComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(homeRoutes),
+    RouterModule.forChild(aboutRoutes),
     SharedModule
   ],
   exports: [],
   providers: []
 })
-export class HomeModule {}
+export class AboutMeModule {}

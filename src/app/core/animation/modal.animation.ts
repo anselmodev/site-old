@@ -1,16 +1,16 @@
 import * as $ from 'jquery';
-import { TweenLite, TimelineLite, Back } from 'gsap';
+import { TweenLite, Back } from 'gsap';
 
-const t1       = new TimelineLite();
 const easeEff  = Back.easeOut.config(2);
-const easeEff2 = Back.easeInOut.config(2);
 
 let option;
 
 const modalHide = () => {
   $('._modal_cip_header, ._modal_cip_content, ._modal_cip_footer').fadeOut('fast', () => {
-    TweenLite.to('._modal_cip_container', .5, {width: 0, height: 0, rotation: '0', onComplete: () => {
-      $('._modal_cip_overlay, ._modal_cip').hide();
+    TweenLite.to('._modal_cip_container', .5, {width: '200px', height: '200px', rotation: '0', onComplete: () => {
+      TweenLite.to('._modal_cip_container', .5, {width: '0', height: '0', onComplete: () => {
+        $('._modal_cip_overlay, ._modal_cip').hide();
+      }});
     }});
   });
 };
@@ -53,7 +53,8 @@ const ModalAnimation = {
         default:
           $('._modal_cip_container').addClass('cip--bgc-white');
           $('#_modal_icon').hide().attr('src', '');
-          $('#_modal_title').removeClass('cip--txc-blue-dark cip--txc-green-dark cip--txc-orange-dark cip--txc-red-dark');
+          $('#_modal_title').removeClass('cip--txc-blue-dark cip--txc-green-dark cip--txc-orange-dark cip--txc-red-dark')
+          .addClass('cip--txc-grey-medium');
           $('#_modal_btn_success, #_modal_btn_cancel').addClass('cip--btn-transparent-grey');
       }
     }
@@ -77,7 +78,7 @@ const ModalAnimation = {
   show: (opt = 'fast') => {
     $('._modal_cip_overlay, ._modal_cip').fadeIn('fast', () => {
       TweenLite.to('._modal_cip_container', .5, {
-        width: '20%', height: '20%', rotation: '360', onComplete: () => {
+        width: '200px', height: '200px', rotation: '360', onComplete: () => {
 
           TweenLite.to('._modal_cip_container', 1, {
             ease: easeEff, width: option.width, height: option.height, onComplete: () => {
@@ -95,15 +96,25 @@ const ModalAnimation = {
     modalHide();
   },
 
-  onSuccess: () => {
+  onConfirm: () => {
+    if (option.onConfirm) {
+      option.onConfirm();
+    }
     modalHide();
   },
 
   onCancel: () => {
+    if (option.onCancel) {
+      option.onCancel();
+    }
     modalHide();
   },
 
-  kill: () => {}
+  onHide: () => {
+    if (option.onHide) {
+      option.onHide();
+    }
+  }
 };
 
 export { ModalAnimation };

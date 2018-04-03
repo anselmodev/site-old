@@ -3,19 +3,23 @@
         Aplicações Mobile, Desktop, E-commerce e Sistemas - CodeInPixel Studios
     </h1>
   <nav class="cip_header_nav">
-    <h1 class="cip--tx-none">Navegação Principal</h1>
+    <h2 class="cip--tx-none">Navegação Principal</h2>
 
-    <div class="cip_header_nav_content cip--padding-lr-10">
-      <button class="cip--btn cip--btn-transparent-white cip--margin-lr-10 cip--margin-tb-10 cip--float-right">
+    <div class="cip_header_nav_content cip--padding-lr-10 cip--no-margin">
+      <button class="cip--btn cip--btn-transparent-white cip--margin-lr-10 cip--margin-tb-10 cip--float-right"
+              (click)="linkNavigation('fale-comigo')">
         <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6"></i> Fale Comigo
       </button>
-      <button class="cip--btn cip--btn-transparent-white cip--margin-lr-10 cip--margin-tb-10 cip--float-right">
+      <button class="cip--btn cip--btn-transparent-white cip--margin-lr-10 cip--margin-tb-10 cip--float-right"
+              (click)="linkNavigation('trabalhos')">
           <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6"></i> Trabalhos
       </button>
-      <button class="cip--btn cip--btn-transparent-white cip--margin-lr-10 cip--margin-tb-10 cip--float-right">
+      <button class="cip--btn cip--btn-transparent-white cip--margin-lr-10 cip--margin-tb-10 cip--float-right"
+              (click)="linkNavigation('servicos')">
           <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6"></i> Serviços
       </button>
-      <button class="cip--btn cip--btn-transparent-white cip--margin-lr-10 cip--margin-tb-10 cip--float-right">
+      <button class="cip--btn cip--btn-transparent-white cip--margin-lr-10 cip--margin-tb-10 cip--float-right"
+              (click)="linkNavigation('sobre-mim')">
           <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6"></i> Sobre Mim
       </button>
     </div>

@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
+  { path: 'sobre-mim', loadChildren: './about-me/about-me.module#AboutMeModule'},
   { path: '', loadChildren: './home/home.module#HomeModule'},
-  { path: '', redirectTo: '', pathMatch: 'full' }
+  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '**', loadChildren: './error404/error404.module#Error404Module'}
 ];
 
 @NgModule({

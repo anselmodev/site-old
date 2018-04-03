@@ -1,7 +1,5 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, EventEmitter, Output } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-
-import * as $ from 'jquery';
 
 declare var particlesJS: any;
 
@@ -13,8 +11,8 @@ declare var particlesJS: any;
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   titlePage: any = 'Aplicações Mobile, Sites, E-commerce e Sistemas - CodeInPixel';
-
-  pixels_home = [
+  logoId: String = 'cip_logo_home';
+  pixels_home    = [
     '_hpp1', '_hpp2 _hpp_wh1', '_hpp3 _hpp_wh1', '_hpp4 _hpp_wh2', '_hpp5 _hpp_wh2', '_hpp6 _hpp_wh2',
     '_hpp7 _hpp_wh2', '_hpp8 _hpp_wh3', '_hpp9 _hpp_wh3', '_hpp10 _hpp_wh4', '_hpp11 _hpp_wh4'
    ];

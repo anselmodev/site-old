@@ -35,41 +35,41 @@ export class LogoCipComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.execAnimation(this.Mylogo);
+    // this.execAnimation(this.Mylogo);
   }
 
   execAnimation(logoId) {
     // Se não for logo com imagem
-    if (this.animation) {
-      if (this.animation === 'show') {
-        TweenLite.to($(`#${this.logoId}`), 0, {opacity: 0});
+    // if (this.animation) {
+    //   if (this.animation === 'show') {
+    //     TweenLite.to($(`#${this.logoId}`), 0, {opacity: 0});
 
-        const delayShowLogo = setTimeout(() => {
+    //     const delayShowLogo = setTimeout(() => {
 
-          this.execLogo('show', this.logoId);
-          clearTimeout(delayShowLogo);
+    //       this.execLogo('show', this.logoId);
+    //       clearTimeout(delayShowLogo);
 
-        }, this.delay);
-      }
-      if (this.animation === 'hide') {
-        const delayHideLogo = setTimeout(() => {
+    //     }, this.delay);
+    //   }
+    //   if (this.animation === 'hide') {
+    //     const delayHideLogo = setTimeout(() => {
 
-          this.execLogo('hide', this.logoId);
-          clearTimeout(delayHideLogo);
+    //       this.execLogo('hide', this.logoId);
+    //       clearTimeout(delayHideLogo);
 
-        }, this.delay);
-      }
-    }
+    //     }, this.delay);
+    //   }
+    // }
   }
 
-  execLogo(type, logoId) {
-    LogoAnimation.init(logoId, this.duration, this.showText);
-    if (type === 'show') {
-      LogoAnimation.show();
-    }
-    if (type === 'hide') {
-      LogoAnimation.hide();
-    }
-  }
+  // execLogo(type, logoId) {
+  //   LogoAnimation.init(logoId, this.duration, this.showText);
+  //   if (type === 'show') {
+  //     LogoAnimation.show();
+  //   }
+  //   if (type === 'hide') {
+  //     LogoAnimation.hide();
+  //   }
+  // }
 
 }

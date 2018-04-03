@@ -18,7 +18,7 @@ const pixelShine = () => {
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
     borderColor: 'rgba(255, 255, 255, 0.3)',
     repeat: 20,
-    repeatDelay: 5
+    repeatDelay: 10
   }, .05);
   this[`tl3${this.elementId}`].staggerTo( this.getPixelbackColor, 2, {
     ease: this.easeEff2,
@@ -26,7 +26,7 @@ const pixelShine = () => {
     borderColor: 'rgba(46, 70, 92, 0.35)',
     delay: 1.5,
     repeat: 20,
-    repeatDelay: 5
+    repeatDelay: 10
   }, .05);
 };
 
@@ -86,7 +86,7 @@ const LogoAnimation = {
   },
   show: () => {
     resetLogoStyle();
-    TweenLite.to(this.getLogoBase, 0, {opacity: 1});
+    this.getLogoBase.css('opacity', 1);
     if (this.animationInit) {
       this[`tl${this.elementId}`].restart();
     } else {
@@ -97,6 +97,16 @@ const LogoAnimation = {
   hide: () => {
     if (this.animationInit) {
       TweenLite.to(this.getLogoBase, 1, {opacity: 0});
+    }
+  },
+  shine: (type) => {
+    if (type === 'stop') {
+        this[`tl2${this.elementId}`].stop();
+        this[`tl3${this.elementId}`].stop();
+    }
+    if (type === 'play') {
+      this[`tl2${this.elementId}`].play();
+      this[`tl3${this.elementId}`].play();
     }
   }
 };

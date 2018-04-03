@@ -1,6 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
 
-import * as $ from 'jquery';
+// import * as $ from 'jquery';
+
+import { PreloaderService } from '../../core/service/preloader.service';
+import { Preloader } from '../../core/animation/preloader.animation';
+
 
 @Component({
   selector: 'cip-header',
@@ -8,8 +14,17 @@ import * as $ from 'jquery';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  constructor() { }
+  sectionWatch: any;
+
+  constructor(private _prealoderServ: PreloaderService) {}
 
   ngOnInit() { }
+
+  linkNavigation(linkTo) {
+    this._prealoderServ.setSectionRouter({
+      sectionRouter: linkTo,
+      preloader: 'close'
+    });
+  }
 
 }

@@ -1,29 +1,32 @@
+$bgcolor-preloader: #f4f4f4;
+
 ._preloader_main{
   z-index: 50000;
 }
-._preloader_door_top{
-  top: -50%;
-  left: 0;
-  background-color: rgba(226, 114, 114, 0.651);
+._preloader_skill_door{
   -webkit-transform: skew(0, 20deg);
   -moz-transform: skew(0, 20deg);
   -ms-transform: skew(0, 20deg);
   -o-transform: skew(0, 20deg);
   transform: skew(0, 20deg);
 }
-._preloader_door_bottom{
-  background-color: rgba(114, 149, 226, 0.651);
-  bottom: -50%;
+._preloader_base{
+  height: 1000px;
+  background-color: $bgcolor-preloader;
+}
+._preloader_door_top{
+  bottom: 49.9%; /*fechada -49.9% - Aberta 250%*/
   left: 0;
-  -webkit-transform: skew(0, 20deg);
-  -moz-transform: skew(0, 20deg);
-  -ms-transform: skew(0, 20deg);
-  -o-transform: skew(0, 20deg);
-  transform: skew(0, 20deg);
+
+}
+._preloader_door_bottom{
+  top: 49.94%; /*fechada -49.94% - Aberta 250%*/
+  left: 0;
 }
 
 ._preloader_loader{
   width: 200px;
   height: 150px;
-  background-color: #efefef;
+  background-color: rgba(114, 149, 226, 0.651);
+  display: none;
 }
