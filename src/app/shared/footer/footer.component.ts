@@ -1,17 +1,20 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import {Router} from '@angular/router';
 import { ModalAnimation } from '../../core/animation/modal.animation';
+
+import { PreloaderService } from '../../core/service/preloader.service';
 
 @Component({
   selector: 'cip-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent implements OnInit, AfterViewInit {
   yearFooter = new Date();
+  sloganFooter: Boolean = true;
   @Output() logoShineEventEmiter = new EventEmitter();
-  @Output() particlesEventEmiter = new EventEmitter();
 
-  constructor() { }
+  constructor(private _router: Router, private _prealoderServ: PreloaderService) { }
 
   ngOnInit() {
     ModalAnimation.init({
@@ -31,17 +34,25 @@ export class FooterComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit() {
+    this._prealoderServ.sectionRequest.subscribe(sectionRes => {
+      if (this._router.url !== '/') {
+        this.sloganFooter = false;
+      } else {
+        this.sloganFooter = true;
+      }
+    });
+  }
+
   openAboutSite() {
     ModalAnimation.show();
     this.logoShineEventEmiter.emit('stop');
-    this.particlesEventEmiter.emit(0);
   }
 
   closeAboutSite() {
     ModalAnimation.hide();
     setTimeout(() => {
       this.logoShineEventEmiter.emit('play');
-      this.particlesEventEmiter.emit(.1);
     }, 2000);
   }
 

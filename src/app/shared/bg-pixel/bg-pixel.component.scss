@@ -1,0 +1,65 @@
+._pix_bg{
+  top:0px;
+  left:0px;
+}
+._pix_bg_item1{
+  width: 135px;
+  height: 135px;
+  background-color: #fcead3;
+  top: -75px;
+  left: 43px;
+  z-index: 1;
+}
+/* with Image */
+._pix_bg_item2{
+  width: 730px;
+  height: 730px;
+  background-color: #fff9f2;
+  background: url('../../../assets/img/bg-home1.jpg');
+  background-position: center center ;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  -webkit-filter:grayscale(100%) sepia(75%) hue-rotate(348deg) brightness(90%);
+  filter:grayscale(100%) sepia(75%) hue-rotate(348deg) brightness(90%);
+  top: -120px;
+  left: 54%;
+  z-index: 1;
+}
+._pix_bg_item2_no_img{
+  background: none;
+}
+._pix_bg_image_color{
+  background-color: rgba(241, 149, 0, 0.18);
+}
+._pix_bg_item3{
+  width: 380px;
+  height: 380px;
+  background-color: #fff9f2;
+  top: 583px;
+  left: -15%;
+  z-index: 1;
+}
+._pix_bg_item4{
+  width: 605px;
+  height: 605px;
+  background-color: rgb(11, 52, 90);
+  top: -194px;
+  left: 10%;
+  z-index: 0;
+}
+._pix_bg_item5{
+  width: 251px;
+  height: 251px;
+  background-color: #d6dde2;
+  top: 63px;
+  left: -11%;
+  z-index: 1;
+}
+._pix_bg_item6{
+  width: 250px;
+  height: 250px;
+  background-color: rgba(11, 52, 90, 0.17);
+  top: 508px;
+  left: 85%;
+  z-index: 1;
+}

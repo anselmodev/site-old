@@ -1,27 +1,41 @@
-<header class="cip_header">
+<header class="cip_header row no-gutters cip--absolute-center-W">
     <h1 class="cip--tx-none">
         Aplicações Mobile, Desktop, E-commerce e Sistemas - CodeInPixel Studios
     </h1>
+
+  <a class="_logo_cip_header cip--pos-absolute cip--cur-pointer" (click)="linkNavigation('/')" *ngIf="logoHeader">
+    <cip-logo #logoPages logoId="cip_logo_pages" size="xxs" showText="true"> </cip-logo>
+  </a>
+
   <nav class="cip_header_nav">
     <h2 class="cip--tx-none">Navegação Principal</h2>
 
-    <div class="cip_header_nav_content cip--padding-lr-10 cip--no-margin">
-      <button class="cip--btn cip--btn-transparent-white cip--margin-lr-10 cip--margin-tb-10 cip--float-right"
+    <div class="cip_header_nav_content cip--padding-lr-10 cip--no-margin cip--w-100 cip--pos-relative cip--ovf">
+      <a class="_header_btn_menu _header_btn_menu_blue cip--margin-lr-10 cip--margin-tb-10 cip--float-right cip--cur-pointer cip--tx-smooth"
               (click)="linkNavigation('fale-comigo')">
-        <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6"></i> Fale Comigo
-      </button>
-      <button class="cip--btn cip--btn-transparent-white cip--margin-lr-10 cip--margin-tb-10 cip--float-right"
+        <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6"></i> Contato
+      </a>
+      <a class="_header_btn_menu _header_btn_menu_blue cip--margin-lr-10 cip--margin-tb-10 cip--float-right cip--cur-pointer cip--tx-smooth"
               (click)="linkNavigation('trabalhos')">
           <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6"></i> Trabalhos
-      </button>
-      <button class="cip--btn cip--btn-transparent-white cip--margin-lr-10 cip--margin-tb-10 cip--float-right"
+      </a>
+      <a class="_header_btn_menu _header_btn_menu_blue cip--margin-lr-10 cip--margin-tb-10 cip--float-right cip--cur-pointer cip--tx-smooth"
               (click)="linkNavigation('servicos')">
           <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6"></i> Serviços
-      </button>
-      <button class="cip--btn cip--btn-transparent-white cip--margin-lr-10 cip--margin-tb-10 cip--float-right"
+      </a>
+      <a class="_header_btn_menu _header_btn_menu_blue cip--margin-lr-10 cip--margin-tb-10 cip--float-right cip--cur-pointer cip--tx-smooth"
               (click)="linkNavigation('sobre-mim')">
-          <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6"></i> Sobre Mim
-      </button>
+          <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6"></i>
+          Sobre
+      </a>
+
+      <a class="_header_btn_menu _header_btn_menu_orange cip--margin-lr-10 cip--margin-tb-10 {{ customerLink }} cip--cur-pointer cip--tx-smooth cip--tx-upercase"
+              (click)="linkNavigation('area-do-cliente')">
+          <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6"></i>
+          Área do Cliente
+      </a>
+
+      <div class="_header_border cip--pos-absolute cip--w-100" *ngIf="borderHeader"></div>
     </div>
 
   </nav>

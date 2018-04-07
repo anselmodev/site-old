@@ -3,10 +3,15 @@
   <div class="_preloader_base _preloader_door_top _preloader_skill_door cip--pos-fixed cip--w-100"></div>
 
   <!-- Bottom Door -->
-  <div class="_preloader_base _preloader_door_bottom _preloader_skill_door cip--pos-fixed cip--w-100"></div>
+  <div class="_preloader_base _preloader_door_bottom _preloader_skill_door cip--pos-fixed cip--w-100">
+    <div class="_preloader_base_line cip--bgc-grey cip--absolute-center-W" style="width:0%; height:1px; opacity:0;"></div>
+  </div>
 
+  <!-- static logo or animation logo -->
   <div class="_preloader_loader cip--absolute-center">
-    <!-- static logo or animation logo -->
-    Carregando...
+    <cip-logo logoId="cip_logo_preloader" size="xs"> </cip-logo>
+    <small class="_preloader_loader_text cip--pos-absolute cip--w-100 cip--tx-center cip--fsz-12 cip--txc-grey-medium cip--no-margin"
+          [innerHTML]="pageName">
+    </small>
   </div>
 </div>

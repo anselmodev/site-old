@@ -4,10 +4,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 @Injectable()
 export class PreloaderService {
 
-  private sectionLoad = new BehaviorSubject<object>({
-    sectionRouter: '/',
-    preloader: ''
-  });
+  private sectionLoad = new BehaviorSubject<any>('');
 
   // Watch on app.component
   sectionRequest = this.sectionLoad.asObservable();

@@ -1,14 +1,29 @@
 .cip_header{
+  max-width: 1920px;
+  height: 80px;
+  margin:0 auto;
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 1;
+}
+._logo_cip_header{
+  top: 38px;
+  left: 60px;
+  z-index: 2;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+._logo_cip_header:hover, ._logo_cip_header:active{
+  -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1); transform: scale(1.1);
+  -webkit-transition-timing-function: ease; transition-timing-function: ease;
+
+}
+::ng-deep #cip_logo_pages{
+  opacity: 1;
 }
 
 .cip_header_nav{
   width: 100%;
-  height: 55px;
+  height: 65px;
 }
 .cip_header_nav>ul{
   height: inherit;
@@ -24,4 +39,55 @@
   opacity: 0.5;
   display: inline-block;
   margin: 1px;
+}
+
+/* Replace Class */
+._header_btn_menu{
+  font-weight: lighter;
+  letter-spacing: 1px;
+  font-size: 14px;
+  line-height: 20px;
+  border: none;
+  border-radius: .25rem;
+  padding: 11px 14px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  will-change: transform, box-shadow, background;
+  outline: none;
+  position: relative;
+}
+
+/* Button Orange */
+._header_btn_menu_orange{
+  background-color: transparent;
+  color: #F29400;
+}
+._header_btn_menu_orange:hover{
+  background-color: rgba(242, 149, 0, 0.2);
+}
+._header_btn_menu_orange:active{
+  background-color: rgba(242, 149, 0, 0.3);
+  color: #FFFFFF;
+}
+
+/* Button Blue */
+._header_btn_menu_blue{
+  background-color: transparent;
+  color: #0B345A;
+}
+._header_btn_menu_blue:hover{
+  background-color: rgba(11, 52, 90, 0.2);
+}
+._header_btn_menu_blue:active{
+  background-color: rgba(11, 52, 90, 0.3);
+  color: #FFFFFF;
+}
+._header_border{
+  height: 1px;
+  background-color: rgba(11, 52, 90, 0.2);
+  top: 61px;
+  left: 160px;
 }

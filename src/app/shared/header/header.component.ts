@@ -1,11 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
-import { Title, Meta } from '@angular/platform-browser';
-
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import {Router} from '@angular/router';
 // import * as $ from 'jquery';
 
 import { PreloaderService } from '../../core/service/preloader.service';
-import { Preloader } from '../../core/animation/preloader.animation';
 
 
 @Component({
@@ -13,12 +10,28 @@ import { Preloader } from '../../core/animation/preloader.animation';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-  sectionWatch: any;
+export class HeaderComponent implements OnInit, AfterViewInit {
+  logoHeader: Boolean   = false;
+  borderHeader: Boolean = false;
+  customerLink: any     = 'cip--float-left';
 
-  constructor(private _prealoderServ: PreloaderService) {}
+  constructor(private _router: Router, private _prealoderServ: PreloaderService) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
+
+  ngAfterViewInit() {
+    this._prealoderServ.sectionRequest.subscribe(sectionRes => {
+        if (this._router.url !== '/') {
+          this.borderHeader = true;
+          this.logoHeader   = true;
+          this.customerLink = 'cip--float-right';
+        } else {
+          this.borderHeader = false;
+          this.logoHeader   = false;
+          this.customerLink = 'cip--float-left';
+        }
+    });
+  }
 
   linkNavigation(linkTo) {
     this._prealoderServ.setSectionRouter({

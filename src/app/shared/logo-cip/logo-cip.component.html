@@ -6,9 +6,6 @@
       logoId="meu_logo"
       size="xxs , xs , sm , md , lg ou xl"
       showText="true"
-      animation="show , hide"
-      duration="1 ( em segundos )"
-      delay="2000 ( em milissegundos )"
       setWatermark="true ou false">
   </cip-logo>
 
@@ -18,22 +15,22 @@
 <!-- Logo Animate -->
 <div class="_logo_cip cip--bgc-transp {{ logoSize }} {{ watermark }}" *ngIf="!sizeImage" id="{{ logoId }}">
   <!-- Pixel Center -->
-  <div class="_logo_center_pixel cip--shadow-z24-white cip--pos-absolute cip--bgc-transp cip--ovf _logo_rotation45">
+  <div class="_logo_center_pixel cip--shadow-z24 cip--pos-absolute cip--bgc-transp cip--ovf _logo_rotation45">
     <img src="assets/img/pixel-center.png" alt="">
   </div>
 
   <!-- Tags -->
   <div class="_logo_tag_left cip--rotate-45 cip--pos-absolute">
-    <div class="_logo_tag_bottom_bd cip--bgc-logo-blue cip--shadow-z24-white cip--pos-absolute"></div>
+    <div class="_logo_tag_bottom_bd cip--bgc-logo-blue cip--shadow-z24 cip--pos-absolute"></div>
     <div class="_logo_tag_left_bd cip--bgc-logo-blue cip--pos-absolute"></div>
   </div>
   <div class="_logo_tag_right cip--rotate-45 cip--pos-absolute">
-    <div class="_logo_tag_right_bd cip--bgc-logo-blue cip--shadow-z24-white cip--pos-absolute"></div>
+    <div class="_logo_tag_right_bd cip--bgc-logo-blue cip--shadow-z24 cip--pos-absolute"></div>
     <div class="_logo_tag_top_bd cip--bgc-logo-blue cip--pos-absolute"></div>
   </div>
 
   <!-- PixelBack -->
-  <div *ngFor="let lpx of pixelsBack" class="_logo_pixel_back _logo_rotation45 cip--shadow-z24-white {{ lpx }}">
+  <div *ngFor="let lpx of pixelsBack" class="_logo_pixel_back _logo_rotation45 {{ lpx }}">
     <div class="_logo_pixel_back_color"></div>
   </div>
 

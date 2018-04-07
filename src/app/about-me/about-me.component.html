@@ -1,8 +1,24 @@
-<p>
-  about-me works!
-</p>
-<br>
-<br>
-<br>
-<br>
-<button (click)="linkNavigation('/')">Back to Home</button>
+<section class="_section_container row no-gutters cip--pos-relative">
+  <h2 class="cip--tx-none"> Sobre Mim </h2>
+
+  <!-- Home -->
+  <div class="_section_content col-12 cip--pos-relative">
+
+    <cip-bg-pixel #bgPixel imageText="false"></cip-bg-pixel>
+
+
+    <article class="_article_content cip--w-100 cip--pos-relative">
+      <p *ngFor="let item of items">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dui leo, feugiat in urna vitae,
+        bibendum vulputate purus. Duis in hendrerit massa. Nulla et porttitor turpis, eu tincidunt nisl.
+        Pellentesque tincidunt vitae magna vel euismod. Sed gravida, tellus convallis molestie interdum,
+        neque felis tempor nunc, vitae pretium ligula quam ac urna. Morbi aliquet tortor id mauris vehicula
+        commodo. Proin at massa vel turpis elementum lacinia. Maecenas et laoreet diam. Morbi ornare
+        facilisis eleifend. Integer et mi efficitur, laoreet elit et, faucibus nisl. Vestibulum et justo
+        ac dolor posuere hendrerit a a orci. Suspendisse sollicitudin vel sem eget vulputate.
+      </p>
+    </article>
+
+  </div>
+
+</section>

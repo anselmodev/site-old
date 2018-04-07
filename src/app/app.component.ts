@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, AfterViewChecked } from '@angular/core';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
 import { Router, NavigationStart, NavigationCancel, NavigationEnd } from '@angular/router';
 
 import { TweenLite } from 'gsap';
@@ -15,6 +15,7 @@ import { LogoAnimation } from './core/animation/logo.animation';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit,  AfterViewInit {
   logoId: String  = 'cip_logo_home';
 
@@ -40,11 +41,7 @@ export class AppComponent implements OnInit,  AfterViewInit {
           action: () => {
             // Somente na pagina home
             if (this._router.url === '/') {
-
               this.logoHome('show');
-              setTimeout(() => {
-                this.actionParticlesHome({particles: .1});
-              }, 2500);
             }
           }
         });
@@ -71,11 +68,6 @@ export class AppComponent implements OnInit,  AfterViewInit {
     this.logoHome(event.logo);
   }
 
-  // Show/Hide Particulas e Logo
-  actionParticlesHome(event) {
-    TweenLite.to('._home_particle', .5, {opacity: event.particles});
-  }
-
   // Play/Pause Animação Logo Shine
   actionLogoHomeShine(event) {
     LogoAnimation.shine(event);
@@ -87,6 +79,9 @@ export class AppComponent implements OnInit,  AfterViewInit {
       const checkCurrentSection = this._router.url.replace('/', '');
 
       if (this.sectionWatch.sectionRouter !== checkCurrentSection) {
+        if (this._router.url === '/') {
+            this.actionLogoHomeShine('stop');
+        }
         Preloader.close({
           currentSection: this._router.url,
           action: () => {

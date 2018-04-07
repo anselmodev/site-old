@@ -1,5 +1,5 @@
 <!-- Main App -->
-<main class="cip_main">
+<main class="cip_main cip--pos-relative">
   <!-- Fixed Preloader App -->
   <cip-preloader></cip-preloader>
 
@@ -10,8 +10,9 @@
   <cip-header></cip-header>
 
   <!-- Main Router -->
-  <router-outlet></router-outlet>
+  <router-outlet #appRoot></router-outlet>
 
-  <!-- Fixed Footer -->
+  <!--Fixed Footer-->
   <cip-footer></cip-footer>
+
 </main>

@@ -1,16 +1,20 @@
-import { Component, OnInit, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { PreloaderService } from '../../core/service/preloader.service';
 
 @Component({
   selector: 'cip-preloader',
   templateUrl: './preloader.component.html',
   styleUrls: ['./preloader.component.scss']
 })
-export class PreloaderComponent implements OnInit, AfterViewInit {
-  @Output() logoEventEmiter = new EventEmitter();
-  constructor() {}
+export class PreloaderComponent implements OnInit {
+  pageName: String = '';
+  constructor(private _prealoderServ: PreloaderService) {}
 
-  ngOnInit() { }
-
-  ngAfterViewInit() { }
+  ngOnInit() {
+    this._prealoderServ.sectionRequest.subscribe(sectionRes => {
+      this.pageName = `Preprando a página <br> <b>"${sectionRes['sectionRouterName']}"</b>`;
+    });
+  }
 
 }

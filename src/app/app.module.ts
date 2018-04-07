@@ -9,7 +9,6 @@ import localePt from '@angular/common/locales/pt';
 import { PreloaderService } from './core/service/preloader.service';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
 import { PreloaderComponent } from './shared/preloader/preloader.component';
 import { ModalComponent } from './shared/modal/modal.component';
 import { SharedModule } from './shared/shared.module';
@@ -20,7 +19,6 @@ registerLocaleData(localePt);
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
     PreloaderComponent,
     ModalComponent
   ],
