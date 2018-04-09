@@ -46,7 +46,7 @@ export class CounterService {
   // Update visitors counters
   updCounter(ref) {
     this.DB.ref( 'counter/visitorsNumber' ).once('value', (snapshot) => {
-      this.visitorNumber = snapshot.val();
+      this.visitorNumber = snapshot.val() + 1;
     });
     // Check Token Exists
     if (!this.tokenVisitor('check')) {
@@ -58,7 +58,7 @@ export class CounterService {
           lastDate: this.datePipe.transform(this.dateNow, 'yyyy-MM-dd H:mm:ss'),
           visits: snapshot.val()['visits'] + 1
         };
-        updateCount['counter/visitorsNumber'] = this.visitorNumber + 1;
+        updateCount['counter/visitorsNumber'] = this.visitorNumber;
         this.DB.ref().update( updateCount );
       });
     }
@@ -104,9 +104,6 @@ export class CounterService {
 
       }
     }
-  }
-
-  getIp() {
   }
 
   execCounter() {

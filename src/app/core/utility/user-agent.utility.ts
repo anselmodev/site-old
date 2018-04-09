@@ -1,3 +1,20 @@
+/**
+ ### Support operation system list:
+   windows: Windows.
+   macosx: Macintosh.
+   ios: iOS.
+   android: Android.
+   linux: Linux.
+
+ ### Support browser list:
+   edge: Microsoft Edge browser.
+   ie: Microsoft Internet Explorer.
+   chrome: Google Chrome.
+   firefox: Mozilla Firefox.
+   safari: Apple Safari.
+   opera: Opera.
+ */
+
 import * as detector from 'detector';
 
 let userAgent: Object;

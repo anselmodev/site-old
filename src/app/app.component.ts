@@ -5,7 +5,6 @@ import { TweenLite } from 'gsap';
 
 import { PreloaderService } from './core/service/preloader.service';
 import { CounterService } from './core/service/counter.service';
-import { UserAgent } from './core/utility/user-agent.utility';
 import { Preloader } from './core/animation/preloader.animation';
 import { LogoAnimation } from './core/animation/logo.animation';
 
@@ -16,7 +15,7 @@ import { LogoAnimation } from './core/animation/logo.animation';
 })
 
 export class AppComponent implements OnInit,  AfterViewInit {
-  logoId:     String = 'cip_logo_home';
+  logoId      : String = 'cip_logo_home';
   sectionWatch: any;
 
   constructor(
@@ -24,10 +23,9 @@ export class AppComponent implements OnInit,  AfterViewInit {
     private _router: Router,
     private _prealoderServ: PreloaderService
   ) {
+
     // Couter
     this._counter.execCounter();
-    this._counter.getIp();
-
   }
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import * as $ from 'jquery';
 
@@ -20,15 +20,6 @@ export class AboutMeComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Scroll Animation Pixel
-    $( document ).scroll(function() {
-      clearTimeout( $.data( this, 'scrollCheck' ) );
-      $.data( this, 'scrollCheck', setTimeout(function() {
-        // interromper animação
-        console.log('stop scroll!');
-      }, 250) );
-    });
-
     // Remove height: 100%; from body
     $('body, .cip_main').css('height', 'auto');
     this.titleService.setTitle(this.titlePage);

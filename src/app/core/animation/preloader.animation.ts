@@ -42,7 +42,7 @@ const Preloader = {
     $('._preloader_main').show();
 
     TweenLite.to('._preloader_door_top', 1, {
-      ease: easeEffClose,
+      ease: Bounce.easeOut,
       bottom: '49.9%', onComplete: () => {
 
         TweenLite.to('._preloader_base_line', .7, { ease:  easeEffOpen, width: '0%', opacity: 0, onComplete: () => {
@@ -54,9 +54,8 @@ const Preloader = {
           });
         }});
 
-
     }});
-    TweenLite.to('._preloader_door_bottom', 1, { ease: easeEffClose, top: '49.94%'});
+    TweenLite.to('._preloader_door_bottom', 1, { ease: Bounce.easeOut, top: '49.94%'});
   },
 
 
