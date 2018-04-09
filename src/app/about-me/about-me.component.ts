@@ -20,14 +20,16 @@ export class AboutMeComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Scroll Animation Pixel
     $( document ).scroll(function() {
-
       clearTimeout( $.data( this, 'scrollCheck' ) );
       $.data( this, 'scrollCheck', setTimeout(function() {
-        console.log('stop');
+        // interromper animação
+        console.log('stop scroll!');
       }, 250) );
-
     });
+
+    // Remove height: 100%; from body
     $('body, .cip_main').css('height', 'auto');
     this.titleService.setTitle(this.titlePage);
     this.linkNavigationName('Sobre Mim');

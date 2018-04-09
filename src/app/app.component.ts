@@ -1,14 +1,13 @@
-import {Component, OnInit, AfterViewInit} from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, NavigationStart, NavigationCancel, NavigationEnd } from '@angular/router';
-
 import { TweenLite } from 'gsap';
-import * as $ from 'jquery';
+// import * as $ from 'jquery';
 
 import { PreloaderService } from './core/service/preloader.service';
+import { CounterService } from './core/service/counter.service';
+import { UserAgent } from './core/utility/user-agent.utility';
 import { Preloader } from './core/animation/preloader.animation';
 import { LogoAnimation } from './core/animation/logo.animation';
-
-
 
 @Component({
   selector: 'cip-root',
@@ -17,11 +16,19 @@ import { LogoAnimation } from './core/animation/logo.animation';
 })
 
 export class AppComponent implements OnInit,  AfterViewInit {
-  logoId: String  = 'cip_logo_home';
-
+  logoId:     String = 'cip_logo_home';
   sectionWatch: any;
 
-  constructor(private _router: Router, private _prealoderServ: PreloaderService) {}
+  constructor(
+    private _counter: CounterService,
+    private _router: Router,
+    private _prealoderServ: PreloaderService
+  ) {
+    // Couter
+    this._counter.execCounter();
+    this._counter.getIp();
+
+  }
 
   ngOnInit() {
     this._prealoderServ.sectionRequest.subscribe(sectionRes => {
@@ -32,7 +39,8 @@ export class AppComponent implements OnInit,  AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this._router.events.subscribe((event) => {
+    // Router Event
+    this._router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         // Iniciar Navegação Router
       } else if ( event instanceof NavigationEnd || event instanceof NavigationCancel ) {
@@ -91,5 +99,4 @@ export class AppComponent implements OnInit,  AfterViewInit {
       }
     }
   }
-
 }

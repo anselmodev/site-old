@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import localePt from '@angular/common/locales/pt';
 
 import { PreloaderService } from './core/service/preloader.service';
+import { CounterService } from './core/service/counter.service';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { PreloaderComponent } from './shared/preloader/preloader.component';
@@ -35,7 +36,8 @@ registerLocaleData(localePt);
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
     HttpClientModule,
-    PreloaderService
+    PreloaderService,
+    CounterService
   ],
   bootstrap: [AppComponent]
 })
