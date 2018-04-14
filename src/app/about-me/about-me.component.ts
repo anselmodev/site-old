@@ -10,10 +10,14 @@ import { PreloaderService } from '../core/service/preloader.service';
   styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent implements OnInit {
-  titlePage:    any = 'Sobre Mim, Desenvolvedor - CodeInPixel';
-  items = [1, 2, 3, 4, 5, 6, , 7, 8, 9, 10];
+  titlePage: any = 'Sobre Mim, Desenvolvedor - CodeInPixel';
+  items          = [1, 2, 3, 4, 5, 6, , 7, 8, 9, 10];
 
-  constructor(private titleService: Title, private meta: Meta, private _prealoderServ: PreloaderService) {
+  constructor(
+    private titleService: Title,
+    private meta: Meta,
+    private _prealoderServ: PreloaderService
+  ) {
     this.meta.updateTag({ name: 'description', content: 'Sobre Mim - Anselmo Lima, Fullstack Developer - CodeInPixel Studios' });
     this.meta.updateTag({ name: 'keywords', content: 'Perfil, Anselmo Lima, Fullstack Developer, Designer, MEAN Stack,' });
     this.meta.updateTag({ name: 'author', content: 'CodeInPixel Studios' });

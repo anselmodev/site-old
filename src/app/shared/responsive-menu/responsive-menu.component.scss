@@ -1,0 +1,85 @@
+/* ###################################### MEDIA QUERY ###################################### */
+/* Max. width 575px - small devices */
+.cip_responsive_nav_container{
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+.cip_responsive_nav_bg{
+  width: 600px;
+  height: 600px;
+}
+.cip_responsive_nav_bg_blue{
+  width: 600px;
+  height: 600px;
+  left: 0;
+  opacity: 0.05;
+}
+.cip_responsive_nav_bg_yellow{
+  width: 300px;
+  height: 300px;
+  left: 0;
+  opacity: 0.05;
+}
+
+.cip_logo_responsive{
+  position: absolute;
+  top: 44%;
+  left: 44%;
+}
+
+.cip_responsive_links_item{
+  background-color: rgba(11, 52, 90, 0.1);
+  color: rgb(11, 52, 90);
+  margin: 10px 0;
+}
+.cip_responsive_links_item_customer{
+  background-color: rgba(247, 165, 1, 0.1);
+  color: rgb(247, 165, 1);
+}
+.cip_responsive_links_item>i{
+  left: -5px;
+  margin-right: 10px;
+}
+.cip_responsive_links_item:hover{
+  background-color: rgba(11, 52, 90, 0.2);
+}
+.cip_responsive_links_item:active{
+  background-color: transparent;
+}
+.cip_responsive_btn_close{
+  color: rgb(11, 52, 90);
+  top: 10px;
+  left: 10px;
+  padding: 10px 13px;
+}
+.cip_responsive_btn_home{
+  top: 10px;
+  left: 10px;
+}
+.cip_responsive_links,
+.cip_responsive_nav_container,
+::ng-deep #cip_logo_resp_menu{
+  display: none;
+}
+.cip_responsive_nav_breadcrumb{
+  top: 25px;
+  right: 25px;
+}
+
+/* Min. width 576px */
+@media (min-width: 576px){
+}
+
+/* Min. width 768px */
+@media (min-width: 768px){
+
+}
+
+/* Min. width 992px */
+@media (min-width: 992px){
+}
+
+/* Min. width 1200px */
+@media (min-width: 1200px){
+}

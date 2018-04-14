@@ -1,0 +1,43 @@
+<div class="cip_responsive_nav_container cip--w-100 cip--h-100 cip--zindex-6 cip--pos-fixed cip--bgc-white cip--ovf">
+
+  <cip-logo logoId="cip_logo_resp_menu" size="lg" setWatermark="true" class="cip_logo_responsive"> </cip-logo>
+
+  <button class="cip_responsive_btn_close cip--btn cip--btn-transparent-white  cip--pos-absolute cip--btn-round"
+          (click)="closeMenu()">
+    <i class="fa fa-times cip--fsz-20 cip--opac-6 cip--pos-relative"></i>
+  </button>
+  <button class="cip_responsive_btn_close cip_responsive_btn_home cip--btn cip--btn-transparent-white  cip--pos-absolute cip--btn-round"
+          (click)="[closeMenu(), linkNavigation('/')]">
+    <i class="fa fa-home cip--fsz-20 cip--opac-6 cip--pos-relative"></i>
+  </button>
+
+  <small class="cip_responsive_nav_breadcrumb cip--fsz-10 cip--pos-absolute cip--tx-smooth cip--txc-orange"
+         *ngIf="pageName && pageName !== 'Home' && pageName !== 'Erro 404'">
+    <i>Você está na página <b>"{{ pageName }}"</b></i>
+  </small>
+
+  <div #menuResp class="cip_responsive_links cip--w-80 cip--h-80 cip--absolute-center">
+    <button *ngFor="let menuItem of menuItems" class="cip_responsive_links_item cip--btn cip--btn-transparent-white cip--btn-lg cip--w-100 cip--tx-center {{ menuItem.otherClass }}
+            {{ (menuItem.title === pageName ? ' cip--disabled-opac' : '') }}" (click)="linkNavigation(menuItem.link)" title="{{ menuItem.title }}" >
+      <i class="{{ menuItem.icon }}"></i> {{ menuItem.label }}
+    </button>
+
+    <div class="cip_responsive_divider cip--divider-blue cip--opac-3"></div>
+
+    <div class="cip_responsive_social cip--opac-5 cip--w-100">
+      <p class="cip--w-100">Social:</p>
+      <a href="https://facebook.com/codeinpixel" target="_blank" class="footer_social_link cip--float-left cip--margin-lr-10 cip--pos-relative">
+        <img src="assets/svg/facebook.svg" alt="Facebook" title="Siga-me no Facebook" width="25">
+      </a>
+      <a href="https://twitter.com/codeinpixel" target="_blank" class="footer_social_link  cip--float-left cip--margin-lr-10">
+        <img src="assets/svg/twitter.svg" alt="Twitter" title="Siga-me no Twitter" width="25">
+      </a>
+      <a href="https://github.com/codeinpixel" target="_blank" class="footer_social_link  cip--float-left cip--margin-lr-10">
+        <img src="assets/svg/github.svg" alt="Github" title="Siga-me no Github" width="25">
+      </a>
+      <div class="cip--margin-tb-10 cip--w-100 cip--float-left"></div>
+    </div>
+
+  </div>
+
+</div>

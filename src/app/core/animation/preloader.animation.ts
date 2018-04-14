@@ -1,5 +1,5 @@
 import * as $ from 'jquery';
-import { TweenLite, TimelineLite, Back } from 'gsap';
+import { TweenLite, TimelineLite, Back, Bounce } from 'gsap';
 import { LogoAnimation } from '../animation/logo.animation';
 
 const easeEffOpen  = Back.easeIn.config(0);

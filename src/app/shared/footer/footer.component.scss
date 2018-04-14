@@ -1,14 +1,7 @@
 ._footer{
   height: 50px;
   bottom: 0; left: 0;
-  z-index: 1;
-}
-._footer_slogan{
-  bottom: 55px;
-  right: 0;
-  z-index: 1;
-  font-size: 60px;
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 ._footer_content{
@@ -16,13 +9,10 @@
   height: 50px;
   // border-top: 1px solid rgba(92, 115, 142, 0.23);
   margin:0 auto;
-  z-index: 0;
 }
 ._footer_content_border{
-  max-width: 1920px;
   height: 1px;
   background-color: rgba(92, 115, 142, 0.23);
-  margin: 0 2.5%;
 }
 ._footer_content_cell{
   bottom: 2.5px;
@@ -51,18 +41,20 @@
 }
 ._copy_footer {
   display: inline-block;
-  top: 10px;
-  padding-left: 10px;
+  top: 8px;
+  text-align: left;
+  padding-left: 15px;
 }
 ._footer_serv{
   margin: 5px 13px;
 }
 ._footer_content_about{
-  padding-right: 2.5%;
 }
 ._footer_about_site{
-  top: 3px;
+  top: 2px;
   padding: 5px;
+  float: right;
+  margin-right: 15px;
 }
 ._footer_about_site>p{
   line-height: 25px;
@@ -74,3 +66,36 @@
 ._footer_about_site:hover{
   background-color: rgba(92, 115, 142, 0.13);
 }
+/* ###################################### MEDIA QUERY ###################################### */
+/* Max. width 575px - small devices */
+
+/* Min. width 576px */
+@media (min-width: 576px){
+  ._footer_slogan{
+    font-size: 40px;
+  }
+  ._copy_footer{
+    text-align: center;
+    padding-left: 0px;
+  }
+}
+
+/* Min. width 768px */
+@media (min-width: 768px){
+  ._footer_slogan{
+    font-size: 50px;
+  }
+}
+
+/* Min. width 992px */
+@media (min-width: 992px){
+  ._footer_slogan{
+    font-size: 60px;
+  }
+}
+
+/* Min. width 1200px */
+@media (min-width: 1200px){
+
+}
+

@@ -1,17 +1,21 @@
 ::ng-deep #cip_logo_home{
   position: absolute;
-  top: 152px;
-  left: 179px;
-  transform: scale(0.27);
+  top: 100px;
+  transform: scale(0.14);
+  right: 0 !important; left: 0 !important; margin: 0 auto !important;
+  left: 9% !important;
 }
-
+._home_slogan{
+  font-size: 24px;
+  text-align: center;
+}
 ._logo_cip_container{
-  width: 400px;
-  height: 400px;
-  left: 50px;
+  height: 0px;
 }
 ._home_content{
-  min-height: 590px;
+  margin: 240px 0 100px 0;
+  padding: 0px 30px;
+  opacity: 0;
 }
 
 ._home_rotation45{
@@ -45,3 +49,46 @@
 ._hpp9{ top: 35.5%; left: 84.6%; }
 ._hpp10{ top: 54.9%; left: 66.1%; }
 ._hpp11{ top: 80.5%; left: 61.9%; }
+
+/* ###################################### MEDIA QUERY ###################################### */
+/* Max. width 575px - small devices */
+
+@media (min-width: 576px){
+  ::ng-deep #cip_logo_home{
+    left: 9% !important;
+  }
+  ._home_slogan{
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 768px){
+  ::ng-deep #cip_logo_home{
+    top: 200px;
+    left: 15% !important;
+    transform: scale(0.23);
+  }
+  ._home_content{
+    margin: 410px 0 100px 0;
+    padding: 0px 80px;
+  }
+  ._home_slogan{
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 992px){
+  ::ng-deep #cip_logo_home{
+    top: 200px;
+    left: 16% !important;
+  }
+  ._home_slogan{
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 1200px){
+  ::ng-deep #cip_logo_home{
+    left: 17% !important;
+  }
+}

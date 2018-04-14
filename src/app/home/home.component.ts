@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 
 import * as $ from 'jquery';
@@ -18,8 +19,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     '_hpp1', '_hpp2 _hpp_wh1', '_hpp3 _hpp_wh1', '_hpp4 _hpp_wh2', '_hpp5 _hpp_wh2', '_hpp6 _hpp_wh2',
     '_hpp7 _hpp_wh2', '_hpp8 _hpp_wh3', '_hpp9 _hpp_wh3', '_hpp10 _hpp_wh4', '_hpp11 _hpp_wh4'
    ];
+  showArticleHome: Boolean = true;
+  sloganHome: Boolean = true;
 
-  constructor(private titleService: Title, private meta: Meta, private _prealoderServ: PreloaderService) {
+  constructor(private _router: Router, private titleService: Title, private meta: Meta, private _prealoderServ: PreloaderService) {
     this.meta.updateTag({ name: 'description', content: 'Aplicações Mobile, Sites, E-commerce e Sistemas - CodeInPixel Studios' });
     this.meta.updateTag({ name: 'keywords', content: 'Aplicativos Mobile, Sites, E-commerce, Aplicativos Desktop, Sistemas' });
     this.meta.updateTag({ name: 'author', content: 'CodeInPixel Studios' });
@@ -28,12 +31,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    $('body, .cip_main').css('height', '100%');
+    if (!this.showArticleHome) {
+      $('body, .cip_main').css('height', '100%');
+    }
     this.titleService.setTitle(this.titlePage);
     this.linkNavigationName('Home');
   }
 
   ngAfterViewInit() {
+    if (this._router.url !== '/') {
+      this.sloganHome = false;
+    } else {
+      this.sloganHome = true;
+    }
     // this.linkNavigation(null);
   }
 

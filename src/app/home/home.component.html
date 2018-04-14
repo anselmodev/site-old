@@ -1,4 +1,4 @@
-<section class="_section_container row no-gutters cip--pos-relative cip--ovf">
+<section class="_section_container row no-gutters cip--pos-relative">
   <h2 class="cip--tx-none"> Página Home </h2>
 
   <!-- Home -->
@@ -6,15 +6,35 @@
 
     <cip-bg-pixel></cip-bg-pixel>
 
-    <div class="_logo_cip_container cip--absolute-center-H">
-      <cip-logo #logoHome logoId="cip_logo_home" size="sm" showText="true" animation="show" duration="1" delay="500"> </cip-logo>
+    <div class="cip--pos-relative row no-gutters">
+      <div class="col-4 cip--bgc-green cip--opac-1"></div>
+
+      <div class="_logo_cip_container cip--pos-relative cip--zindex-1 col-4 cip--w-100">
+        <p class="cip--tx-center">
+          <cip-logo #logoHome logoId="cip_logo_home" size="sm" showText="true"> </cip-logo>
+        </p>
+      </div>
+
+      <div class="col-4 cip--bgc-green cip--opac-1"></div>
     </div>
 
-    <article class="_article_content _home_content cip--w-100 cip--pos-relative cip--ovf-x cip--ovf-y-auto ">
-
+    <article class="_article_content _home_content cip--w-100 cip--pos-relative cip--ovf-x cip--ovf-y-auto "
+    *ngIf="showArticleHome">
+      <h3 class="_home_slogan cip--w-100 cip--pos-relative cip--opac-1 cip--txc-logo-blue cip--no-margin cip--tx-center">
+        Pensar, Criar e Inspirar.
+      </h3>
+      <p >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dui leo, feugiat in urna vitae,
+        bibendum vulputate purus. Duis in hendrerit massa. Nulla et porttitor turpis, eu tincidunt nisl.
+        Pellentesque tincidunt vitae magna vel euismod. Sed gravida, tellus convallis molestie interdum,
+        neque felis tempor nunc, vitae pretium ligula quam ac urna. Morbi aliquet tortor id mauris vehicula
+        commodo. Proin at massa vel turpis elementum lacinia. Maecenas et laoreet diam. Morbi ornare
+        facilisis eleifend. Integer et mi efficitur, laoreet elit et, faucibus nisl. Vestibulum et justo
+        ac dolor posuere hendrerit a a orci. Suspendisse sollicitudin vel sem eget vulputate.
+      </p>
 
     </article>
-
+    <div class="cip--clearfix"></div>
 
 
   </div>

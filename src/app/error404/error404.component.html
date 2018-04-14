@@ -1,2 +1,55 @@
-<h2 class="cip--tx-center">Desculpe!</h2>
-<p class="cip--tx-center">Página não encontrada!</p>
+<section class="_section_container row no-gutters cip--pos-relative">
+  <h2 class="cip--tx-none"> Página não Encontrada! </h2>
+
+  <!-- Home -->
+  <div class="_section_content col-12 cip--pos-relative">
+
+    <cip-bg-pixel imageText="false"></cip-bg-pixel>
+
+    <article class="_article_content _err404_content cip--w-100 cip--pos-relative">
+
+      <div class="row no-gutters">
+        <div class="_err404_alert col-12">
+          <p class="cip--w-100 cip--tx-center cip--txc-logo-blue cip--tx-smooth cip--no-margin">
+            Desculpe, mas a página requisitada não existe!
+          </p>
+        </div>
+      </div>
+
+      <div class="row no-gutters">
+        <div class="_err404_number col-12">
+          <p class="cip--w-100 cip--tx-center cip--txc-logo-blue cip--tx-smooth cip--opac-1 cip--no-margin">404</p>
+        </div>
+      </div>
+
+      <div class="row no-gutters">
+        <div class="_err404_question col-12">
+          <p class="cip--w-100 cip--tx-center cip--txc-orange cip--tx-smooth  cip--no-margin">Gostaria de acessar as opções abaixo?</p>
+        </div>
+      </div>
+
+      <div class="_err404_opt_sections row no-gutters">
+        <div class="_err404_opt_sections_content col-12 col-sm-6"
+             *ngFor="let section of sections">
+
+          <a class="_err404_opt_link cip--cur-pointer cip--w-80 cip--h-80"
+             (click)="linkNavigation(section.link)" title="{{ section.title }}">
+
+            <div class="_err404_opt_pixel_back cip--rotate-45 cip--bgc-white cip--shadow-z15 cip--absolute-center">
+              <!--<img src="{{ section.background }}" alt="{{ section.label }}" title="{{ section.title }}">-->
+            </div>
+            <p class="_err404_opt_title cip--absolute-center-W cip--tx-center {{ section.otherClass }} cip--tx-smooth
+                      cip--no-margin cip--zindex-2 cip--fsz-18">
+              {{ section.label }}
+            </p>
+
+          </a>
+
+        </div>
+      </div>
+
+    </article>
+
+  </div>
+
+</section>

@@ -1,9 +1,4 @@
-<footer class="_footer row cip--pos-absolute no-gutters cip--w-100">
-
-  <p class="_footer_slogan cip--w-100 cip--pos-absolute cip--opac-1 cip--txc-logo-blue cip--padding-lr-30 cip--no-margin"
-      *ngIf="sloganFooter">
-    Pensar, Criar e Inspirar.
-  </p>
+<footer class="_footer row cip--pos-fixed no-gutters cip--w-100 cip--zindex-5">
 
   <!-- Content -->
   <div class="_footer_content col-12 row no-gutters">
@@ -11,26 +6,20 @@
     <div class="_footer_content_border cip--w-100"></div>
 
     <!-- Social -->
-    <div class="_footer_content_cell _footer_content_social col-4 cip--pos-relative">
-      <a href="https://facebook.com/codeinpixel" target="_blank" class="footer_social_link cip--float-left cip--pos-relative">
+    <div class="_footer_content_cell _footer_content_social col-4 cip--pos-relative d-none d-sm-inline">
+      <a href="https://facebook.com/codeinpixel" target="_blank" class="footer_social_link cip--float-left cip--pos-relative d-none d-sm-inline">
         <img src="assets/svg/facebook.svg" alt="Facebook" title="Siga-me no Facebook" width="25">
       </a>
-      <a href="https://twitter.com" target="_blank" class="footer_social_link  cip--float-left cip--margin-lr-10">
+      <a href="https://twitter.com/codeinpixel" target="_blank" class="footer_social_link  cip--float-left cip--margin-lr-10 d-none d-sm-inline">
         <img src="assets/svg/twitter.svg" alt="Twitter" title="Siga-me no Twitter" width="25">
       </a>
-      <a href="https://plus.google.com" target="_blank" class="footer_social_link  cip--float-left cip--margin-lr-10">
-        <img src="assets/svg/google.svg" alt="Google" title="Siga-me no Google Plus" width="25">
-      </a>
-      <a href="https://linkedin.com" target="_blank" class="footer_social_link  cip--float-left cip--margin-lr-10">
-        <img src="assets/svg/linkedin.svg" alt="Linkedin" title="Siga-me no Linkedin" width="25">
-      </a>
-      <a href="https://github.com" target="_blank" class="footer_social_link  cip--float-left cip--margin-lr-10">
+      <a href="https://github.com/codeinpixel" target="_blank" class="footer_social_link  cip--float-left cip--margin-lr-10 d-none d-sm-inline">
         <img src="assets/svg/github.svg" alt="Github" title="Siga-me no Github" width="25">
       </a>
     </div>
 
     <!-- Copyright -->
-    <div class="_footer_content_cell col-4 cip--pos-relative">
+    <div class="_footer_content_cell col-6 col-sm-4 cip--pos-relative">
       <a rel="license" class="cip--fsz-13 cip--w-100 cip--no-margin">
         <p class="_copy_footer cip--w-100 cip--no-margin cip--txc-logo-blue cip--tx-smooth cip--opac-5 cip--tx-italic cip--fsz-10 cip--pos-relative cip--tx-center">
           © {{ yearFooter | date:'yyyy' }} CodeInPixel Studios
@@ -39,8 +28,8 @@
     </div>
 
     <!-- About This Site -->
-    <div class="_footer_content_about _footer_content_cell col-4 cip--pos-relative">
-      <a rel="About this site" class="_footer_about_site cip--fsz-13 cip--float-right cip--no-margin cip--rad4 cip--cur-pointer cip--pos-relative"
+    <div class="_footer_content_about _footer_content_cell col-6 col-sm-4 cip--pos-relative">
+      <a rel="About this site" class="_footer_about_site cip--fsz-13 cip--rad4 cip--cur-pointer cip--pos-relative"
          (click)="openAboutSite()">
         <p class="cip--w-100 cip--no-margin cip--txc-logo-blue cip--tx-smooth cip--opac-5 cip--tx-italic cip--fsz-10">
           <img src="assets/svg/info2.svg" alt="Informações" title="Informações Sobre este Site" width="15" class="cip--pos-relative cip--opac-5">

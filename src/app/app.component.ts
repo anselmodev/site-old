@@ -15,7 +15,7 @@ import { LogoAnimation } from './core/animation/logo.animation';
 })
 
 export class AppComponent implements OnInit,  AfterViewInit {
-  logoId      : String = 'cip_logo_home';
+  logoId: String = 'cip_logo_home';
   sectionWatch: any;
 
   constructor(
@@ -23,7 +23,6 @@ export class AppComponent implements OnInit,  AfterViewInit {
     private _router: Router,
     private _prealoderServ: PreloaderService
   ) {
-
     // Couter
     this._counter.execCounter();
   }
@@ -55,23 +54,22 @@ export class AppComponent implements OnInit,  AfterViewInit {
     });
   }
 
+  // Acionar Animação Logo
+  actionLogoHome(event) {
+    this.logoHome(event.logo);
+  }
+
   // Animar Logotipo Home
   logoHome(type) {
     LogoAnimation.init(this.logoId, 1, 'true');
     if (type === 'show') {
       LogoAnimation.show();
       setTimeout(() => {
-        TweenLite.to('._home_particle', 1, {opacity: .1});
+        TweenLite.to('._home_content', .3, {opacity: 1});
       }, 3500);
     } else if (type === 'hide') {
       LogoAnimation.hide();
-      TweenLite.to('._home_particle', .5, {opacity: 0});
     }
-  }
-
-  // Acionar Animação Logo
-  actionLogoHome(event) {
-    this.logoHome(event.logo);
   }
 
   // Play/Pause Animação Logo Shine
