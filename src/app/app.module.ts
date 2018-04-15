@@ -13,9 +13,6 @@ import { HeaderComponent } from './shared/header/header.component';
 import { PreloaderComponent } from './shared/preloader/preloader.component';
 import { ModalComponent } from './shared/modal/modal.component';
 import { SharedModule } from './shared/shared.module';
-import { ServicesComponent } from './services/services.component';
-import { WorksComponent } from './works/works.component';
-import { ContactComponent } from './contact/contact.component';
 
 registerLocaleData(localePt);
 
@@ -24,10 +21,7 @@ registerLocaleData(localePt);
     AppComponent,
     HeaderComponent,
     PreloaderComponent,
-    ModalComponent,
-    ServicesComponent,
-    WorksComponent,
-    ContactComponent
+    ModalComponent
   ],
   imports: [
     BrowserModule,

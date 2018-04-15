@@ -5,21 +5,21 @@ import * as $ from 'jquery';
 import { PreloaderService } from '../core/service/preloader.service';
 
 @Component({
-  selector: 'cip-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  selector: 'cip-service-provision',
+  templateUrl: './service-provision.component.html',
+  styleUrls: ['./service-provision.component.scss']
 })
-export class ContactComponent implements OnInit {
-  titlePage: any = 'Contato, Fale Comigo - CodeInPixel';
-  titlePageContent: any = 'Contato, Orçamento, Tirar Dúvidas ou uma Consultoria?';
+export class ServiceProvisionComponent implements OnInit {
+  titlePage: any = 'Serviços e Tecnologias - CodeInPixel Studios';
+  titlePageContent: any = 'Prestação de Serviços, Linguagens e Tecnologias com Qual Trabalho';
 
   constructor(
     private titleService: Title,
     private meta: Meta,
     private _prealoderServ: PreloaderService
   ) {
-    this.meta.updateTag({ name: 'description', content: 'Contato, Orçamento, Tirar Dúvidas ou Consultoria - CodeInPixel Studios' });
-    this.meta.updateTag({ name: 'keywords', content: 'Contato, Orçamento, Dúvidas, Consultoria' });
+    this.meta.updateTag({ name: 'description', content: 'Prestação de Serviços, Linguagens e Tecnologias - CodeInPixel Studios' });
+    this.meta.updateTag({ name: 'keywords', content: 'Serviços de TI, Desenvolvimento, Developer, Full Stack, App Mobile, Aplicações' });
     this.meta.updateTag({ name: 'author', content: 'CodeInPixel Studios' });
   }
 
@@ -27,7 +27,7 @@ export class ContactComponent implements OnInit {
     // Remove height: 100%; from body
     $('body, .cip_main').css('height', 'auto');
     this.titleService.setTitle(this.titlePage);
-    this.linkNavigationName('Fale Comigo');
+    this.linkNavigationName('Serviços e Tecnologias');
   }
 
   // Router Navigation

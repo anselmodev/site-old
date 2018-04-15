@@ -3,19 +3,19 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { SharedModule } from '../shared/shared.module';
-import { ContactComponent } from './contact.component';
+import { ServiceProvisionComponent } from './service-provision.component';
 
 // Routes Home Component
-const contactRoutes: Routes = [{ path: '', component: ContactComponent }];
+const serviceRoutes: Routes = [{ path: '', component: ServiceProvisionComponent }];
 
 @NgModule({
-  declarations: [ContactComponent],
+  declarations: [ServiceProvisionComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(contactRoutes),
+    RouterModule.forChild(serviceRoutes),
     SharedModule
   ],
   exports: [],
   providers: []
 })
-export class ContactModule {}
+export class ServiceProvisionModule {}

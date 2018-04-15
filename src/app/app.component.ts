@@ -25,6 +25,7 @@ export class AppComponent implements OnInit,  AfterViewInit {
   ) {
     // Couter
     this._counter.execCounter();
+    console.log('🚀 Codificado com carinho por: Anselmo Lima - https://codeinpixel.com/sobre-mim');
   }
 
   ngOnInit() {

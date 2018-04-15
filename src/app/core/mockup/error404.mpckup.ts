@@ -25,7 +25,7 @@ const menuSections = [
     title: 'Acesso exclusixo ao cliente com Projetos, chamados e assitência.',
     background: '',
     link: 'login-cliente',
-    otherClass: 'cip--txc-orange cip--tx-bold  cip--tx-shadow-white'
+    otherClass: 'cip--txc-orange cip--tx-bold cip--tx-shadow2'
   }
 ];
 
