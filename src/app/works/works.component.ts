@@ -9,6 +9,7 @@ import { PreloaderService } from '../core/service/preloader.service';
   templateUrl: './works.component.html',
   styleUrls: ['./works.component.scss']
 })
+
 export class WorksComponent implements OnInit {
   titlePage: any = 'Trabalhos, Conceitos e Projetos - CodeInPixel Studios';
   titlePageContent: any = 'Trabalhos, Conceitos e Projetos';

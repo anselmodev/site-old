@@ -66,6 +66,16 @@ const Preloader = {
 
   fadeOut: () => {
 
+  },
+
+  isOpen: () => {
+    $('._preloader_main').hide();
+    TweenLite.to('._preloader_base_line', 0, { width: '100%', opacity: .5, onComplete: () => {
+
+        TweenLite.to('._preloader_door_top', 0, { bottom: '250%' });
+        TweenLite.to('._preloader_door_bottom', 0, { top: '250%' });
+
+      }});
   }
 };
 

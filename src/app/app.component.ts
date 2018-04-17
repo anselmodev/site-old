@@ -43,16 +43,18 @@ export class AppComponent implements OnInit,  AfterViewInit {
         // Iniciar Navegação Router
       } else if ( event instanceof NavigationEnd || event instanceof NavigationCancel ) {
         // Navegação Router Finalizada
-        Preloader.open({
-          action: () => {
-            // Somente na pagina home
-            if (this._router.url === '/') {
-              this.logoHome('show');
-            }
-          }
-        });
+        // Preloader.open({
+        //   action: () => {
+        //     // Somente na pagina home
+        //     if (this._router.url === '/') {
+        //       this.logoHome('show');
+        //     }
+        //   }
+        // });
       }
     });
+
+    Preloader.isOpen();
   }
 
   // Acionar Animação Logo
@@ -87,12 +89,12 @@ export class AppComponent implements OnInit,  AfterViewInit {
         if (this._router.url === '/') {
             this.actionLogoHomeShine('stop');
         }
-        Preloader.close({
-          currentSection: this._router.url,
-          action: () => {
-            this._router.navigate([this.sectionWatch.sectionRouter]);
-          }
-        });
+        // Preloader.close({
+        //   currentSection: this._router.url,
+        //   action: () => {
+        //     this._router.navigate([this.sectionWatch.sectionRouter]);
+        //   }
+        // });
       }
     }
   }

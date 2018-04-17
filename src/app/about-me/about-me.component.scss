@@ -1,12 +1,77 @@
-/* ###################################### MEDIA QUERY ###################################### */
 ._about_content{
+  padding: 20px 10% 20px 10%;
 }
 
+/* ###################################### MEDIA QUERY ###################################### */
+@media (min-width: 560px){
+  ._about_content{
+    padding: 20px 16% 20px 16%;
+  }
+  ._content_box_great{
+    font-size: 22px;
+  }
+}
 @media (min-width: 576px){
+  ._content_header_pixel{
+    width: 50px;
+    height: 50px;
+  }
+  ._content_header_title_left{
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 21px;
+  }
+  ._content_header_titlemark_left{
+    padding-left: 65px;
+    font-size: 50px;
+    top: -5px;
+  }
+  ._content_header_title_right{
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 21px;
+  }
+  ._content_header_titlemark_right{
+    padding-right: 65px;
+    font-size: 50px;
+    top: -5px;
+  }
 }
 
 @media (min-width: 768px){
-
+  ._about_content{
+    padding: 20px 14% 20px 14%;
+  }
+  ._content_header_pixel{
+    width: 70px;
+    height: 70px;
+  }
+  ._content_header_title_left{
+    font-size: 30px;
+    padding-top: 16px;
+    padding-left: 30px;
+  }
+  ._content_header_titlemark_left{
+    padding-left: 86px;
+    font-size: 60px;
+    top: -2px;
+  }
+  ._content_header_title_right{
+    font-size: 30px;
+    padding-top: 16px;
+    padding-right: 30px;
+  }
+  ._content_header_titlemark_right{
+    padding-right: 86px;
+    font-size: 60px;
+    top: -2px;
+  }
+  ._content_box_link_social>img{
+    height: 40px;
+  }
+  ._content_box_title{
+    font-size: 20px;
+  }
 }
 
 @media (min-width: 800px){
@@ -16,4 +81,40 @@
 }
 
 @media (min-width: 1200px){
+  ._about_content{
+    padding: 20px 20% 20px 20%;
+  }
+  ._content_header_pixel{
+    width: 70px;
+    height: 70px;
+  }
+  ._content_header_title_left{
+    font-size: 30px;
+    padding-top: 16px;
+    padding-left: 30px;
+  }
+  ._content_header_titlemark_left{
+    padding-left: 86px;
+    font-size: 60px;
+    top: -2px;
+  }
+  ._content_header_title_right{
+    font-size: 30px;
+    padding-top: 16px;
+    padding-right: 30px;
+  }
+  ._content_header_titlemark_right{
+    padding-right: 86px;
+    font-size: 60px;
+    top: -2px;
+  }
+  ._content_box_link_social>img{
+    height: 40px;
+  }
+  ._content_box_title{
+    font-size: 20px;
+  }
+  ._content_box_great{
+    font-size: 30px;
+  }
 }

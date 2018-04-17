@@ -8,15 +8,123 @@
 
 
     <article class="_article_content _about_content cip--w-100 cip--pos-relative">
-      <p *ngFor="let item of items">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dui leo, feugiat in urna vitae,
-        bibendum vulputate purus. Duis in hendrerit massa. Nulla et porttitor turpis, eu tincidunt nisl.
-        Pellentesque tincidunt vitae magna vel euismod. Sed gravida, tellus convallis molestie interdum,
-        neque felis tempor nunc, vitae pretium ligula quam ac urna. Morbi aliquet tortor id mauris vehicula
-        commodo. Proin at massa vel turpis elementum lacinia. Maecenas et laoreet diam. Morbi ornare
-        facilisis eleifend. Integer et mi efficitur, laoreet elit et, faucibus nisl. Vestibulum et justo
-        ac dolor posuere hendrerit a a orci. Suspendisse sollicitudin vel sem eget vulputate.
-      </p>
+
+      <!--Content About Me-->
+      <div class="row no-gutters">
+        <!--Head-->
+        <div class="col-12 cip--pos-relative">
+          <div class="_content_header_pixel_left _content_header_pixel cip--rotate-45 cip--pos-absolute"></div>
+          <h3 class="_content_header_title_left cip--no-margin cip--tx-smooth cip--tx-weight-light">
+            Sobre Mim
+          </h3>
+          <p class="_content_header_titlemark_left cip--pos-absolute cip--no-margin">
+            Sobre Mim
+          </p>
+        </div>
+
+        <!--Content-->
+        <div class="col-12 cip--pos-relative">
+          <h4 class="_content_box_title cip--tx-weight-light">Olá!</h4>
+          <p class="_content_box_parag cip--tx-smooth">
+            Meu nome é Anselmo Lima e primeiramente… É um grande prazer tê-lo aqui em meu humilde “ambiente”.<br>
+            Sou um homem de 39 anos, casado e com família constituída onde quatro filhos e um gato fazem parte
+            desse lindo grupo iniciado a quase 20 anos (rsrs…)
+          </p>
+          <p class="_content_box_parag cip--tx-smooth">
+            Hoje sou desenvolvedor Full Stack, tenho grande estima por soluções e conceitos diferenciados que buscam quebrar paradigmas.<br>
+            Também sou uma pessoa criativa, entusiasta, positiva e gosto de novos desafios.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="_content_divider_space_lg"></div>
+
+      <!--Content Why Me-->
+      <div class="row no-gutters">
+        <!--Head-->
+        <div class="col-12 cip--pos-relative">
+          <div class="_content_header_pixel_right _content_header_pixel cip--rotate-45 cip--pos-absolute"></div>
+          <h3 class="_content_header_title_right cip--no-margin cip--tx-smooth cip--tx-weight-light">
+            Por que Eu?
+          </h3>
+          <p class="_content_header_titlemark_right cip--pos-absolute cip--no-margin">
+            Por que Eu?
+          </p>
+        </div>
+
+        <!--Content-->
+        <div class="col-12 cip--pos-relative">
+          <h4 class="_content_box_title cip--tx-weight-light">
+            Um Curioso em Busca de Conhecimentos
+          </h4>
+          <p class="_content_box_parag cip--tx-smooth">
+            Desde 1992, fui um grande “curioso” com tecnologias da informação!
+            Foi nessa época o meu primeiro contato com um computador pessoal onde rodava Windows 3.1. Era mágico as coisas
+            possíveis de se fazer com aquele equipamento.
+          </p>
+          <p class="_content_box_parag cip--tx-smooth">
+            Em 2001, resolvi aventurar-me em sites e animações usando o famoso Macromedia Flash e Dreamweaver. Eu brincava
+            com conceitos sites diferenciados juntando animações 2D, 3D e interação direta com o usuário. Era incrível!
+          </p>
+          <p class="_content_box_parag cip--tx-smooth">
+            Somente depois de experimentar outras profissões como “Silk-screen, design gráfico e manutenção de computadores”,
+            eu realmente optei por desenvolvimento web no início de 2007.
+            Abracei com todas as forças a tarefa de criar soluções que muitas vezes mudam a vida e o dia a dia das pessoas.
+          </p>
+          <h4 class="_content_box_title cip--tx-weight-light">
+            Experiência... Sempre Aprendendo e Compartilhando
+          </h4>
+          <p class="_content_box_parag cip--tx-smooth">
+            Hoje com quase 11 anos de experiência, lembro-me de iniciar com HTML, CSS, Javascript Básico e seguindo para PHP na
+            construção de páginas dinâmicas. Agora atuo com desenvolvimento avançado usando Javascript
+            ( Libs, Frameworks, Node.js, Angular, React, SPA, Rest API, etc ), HTML5, CSS3 e SASS. <br><br>
+            <em>"Mais detalhes sobre as ferramentas e linguagens que trabalho podem ser conferidas
+            <a class="cip--cur-pointer cip--txc-blue cip--tx-decor-underline" (click)="linkNavigationName('servicos-tecnologias')">Nesta Seção</a>"</em>
+          </p>
+          <h4 class="_content_box_title cip--tx-weight-light">
+            Criação + Criatividade
+          </h4>
+          <p class="_content_box_parag cip--tx-smooth">
+            Foco no gerenciamento de todo o processo criativo com soluções exclusivas para cada cliente!<br>
+            A busca de novos conceitos e novidades são os primeiros itens da lista! Procuro sempre uma gestão de tempo eficiente
+            para você não se preocupar com prazos perdidos ou adiados.
+          </p>
+          <h4 class="_content_box_title cip--tx-weight-light">
+            Nas Redes Sociais
+          </h4>
+          <p class="_content_box_parag cip--tx-smooth">
+            Afinal, quem não faz parte delas né?<br>
+            Abaixo você pode seguir-me, curtir, criticar ou solicitar amizade se desejar. Fique a vontade!
+          </p>
+
+          <p class="_content_box_parag cip--tx-smooth">
+            <a href="https://facebook.com/codeinpixel" target="_blank" class="_content_box_link_social cip--tx-decor-none cip--opac-5 cip--margin-lr-10" title="Curta minha página no Facebook">
+              <img src="../../assets/svg/facebook.svg" alt="Facebook" title="Facebook">
+            </a>
+            <a href="https://twitter.com/codeinpixel" target="_blank" class="_content_box_link_social cip--tx-decor-none cip--opac-5 cip--margin-lr-10" title="Siga-me no Twitter">
+              <img src="../../assets/svg/twitter.svg" alt="Twitter" title="Twitter">
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="_content_box_link_social cip--tx-decor-none cip--opac-5 cip--margin-lr-10" title="Meu Perfil no LinkedIn">
+              <img src="../../assets/svg/linkedin.svg" alt="LinkedIn" title="LinkedIn">
+            </a>
+            <a href="https://github.com/codeinpixel" target="_blank" class="_content_box_link_social cip--tx-decor-none cip--opac-5 cip--margin-lr-10" title="Meu Perfil no Github">
+              <img src="../../assets/svg/github.svg" alt="Github" title="Github">
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=5511974055235&text=Contato%20pelo%20site%20CodeInPixel:%20" target="_blank" class="_content_box_link_social cip--tx-decor-none cip--opac-5 cip--margin-lr-10" title="Contate-me pelo WhatsApp">
+              <img src="../../assets/svg/whatsapp.svg" alt="WhatsApp" title="WhatsApp">
+            </a>
+
+          </p>
+
+          <h5 class="_content_box_great cip--w-100 cip--txc-orange cip--opac-3 cip--tx-center">
+            Muito Grato Pelo Seu Tempo
+          </h5>
+
+        </div>
+
+      </div>
+
     </article>
 
   </div>
