@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import {ServiceProvisionModule} from './service-provision/service-provision.module';
-import {WorksModule} from './works/works.module';
 
 const routes: Routes = [
   { path: 'sobre-mim', loadChildren: './about-me/about-me.module#AboutMeModule'},

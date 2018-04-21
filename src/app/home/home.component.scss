@@ -8,14 +8,16 @@
 ._home_slogan{
   font-size: 24px;
   text-align: center;
+  display: none;
 }
 ._logo_cip_container{
   height: 0px;
 }
 ._home_content{
-  margin: 240px 0 100px 0;
+  top: -20px;
+  margin: 240px 0 50px 0;
   padding: 0px 30px;
-  opacity: 0;
+  //opacity: 0;
 }
 
 ._home_rotation45{
@@ -49,6 +51,29 @@
 ._hpp9{ top: 35.5%; left: 84.6%; }
 ._hpp10{ top: 54.9%; left: 66.1%; }
 ._hpp11{ top: 80.5%; left: 61.9%; }
+._home_news{
+  display: none;
+}
+._home_news_image_container{
+  min-height: 275px;
+}
+._home_news_image_content{
+  width: 160px;
+  height: 160px;
+  top: 50px;
+}
+._home_news_desc_container{
+  //margin-top: 20px;
+}
+._home_news_desc_content{
+  margin-top: 20px;
+}
+._home_news_desc_link{
+  display: inherit;
+}
+._home_wait{
+  margin-top: 60px;
+}
 
 /* ###################################### MEDIA QUERY ###################################### */
 /* Max. width 575px - small devices */
@@ -75,6 +100,10 @@
   ._home_slogan{
     font-size: 40px;
   }
+  ._home_news{
+    max-width: 580px;
+    margin: 50px -10px;
+  }
 }
 
 @media (min-width: 992px){
@@ -85,10 +114,29 @@
   ._home_slogan{
     font-size: 50px;
   }
+  ._home_news_image_content{
+
+  }
+  ._home_news_desc_container{
+    padding-right: 40px;
+  }
+  ._home_news{
+    max-width: 780px;
+    margin: 50px 0px;
+  }
 }
 
 @media (min-width: 1200px){
   ::ng-deep #cip_logo_home{
     left: 17% !important;
+  }
+  ._home_news{
+    max-width: 920px;
+  }
+  ._home_news_image_container{
+    left: -30px;
+  }
+  ._home_news_desc_container{
+    padding-right: 0px;
   }
 }

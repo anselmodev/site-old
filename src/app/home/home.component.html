@@ -3,9 +3,10 @@
 
   <!-- Home -->
   <div class="_section_content col-12 cip--pos-relative">
-
+    <!--Background Pixels-->
     <cip-bg-pixel></cip-bg-pixel>
 
+    <!--Logo-->
     <div class="cip--pos-relative row no-gutters">
       <div class="col-4 cip--bgc-green cip--opac-1"></div>
 
@@ -15,23 +16,50 @@
         </p>
       </div>
 
-      <div class="col-4 cip--bgc-green cip--opac-1"></div>
+      <!--<div class="col-4 cip&#45;&#45;bgc-green cip&#45;&#45;opac-1"></div>-->
     </div>
 
     <article class="_article_content _home_content cip--w-100 cip--pos-relative cip--ovf-x cip--ovf-y-auto "
     *ngIf="showArticleHome">
+
+      <!--Wait-->
+      <p class="_home_wait cip--w-100 cip--txc-grey-medium cip--tx-shadow-white cip--fsz-12 cip--tx-center">
+        <i class="fa fa-square fa-spin cip--opac-5 cip--padding-lr-5"></i>
+        Mais Alguns Segundos...
+      </p>
+
       <h3 class="_home_slogan cip--w-100 cip--pos-relative cip--opac-1 cip--txc-logo-blue cip--no-margin cip--tx-center">
         Pensar, Criar e Inspirar.
       </h3>
-      <p >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dui leo, feugiat in urna vitae,
-        bibendum vulputate purus. Duis in hendrerit massa. Nulla et porttitor turpis, eu tincidunt nisl.
-        Pellentesque tincidunt vitae magna vel euismod. Sed gravida, tellus convallis molestie interdum,
-        neque felis tempor nunc, vitae pretium ligula quam ac urna. Morbi aliquet tortor id mauris vehicula
-        commodo. Proin at massa vel turpis elementum lacinia. Maecenas et laoreet diam. Morbi ornare
-        facilisis eleifend. Integer et mi efficitur, laoreet elit et, faucibus nisl. Vestibulum et justo
-        ac dolor posuere hendrerit a a orci. Suspendisse sollicitudin vel sem eget vulputate.
-      </p>
+
+      <div class="_home_news row no-gutters cip--margin-tb-30">
+        <!--Image News-->
+        <div class="_home_news_image_container col-12 col-md-6 cip--float-left cip--pos-relative">
+          <div class="_home_news_image_content cip--rotate-45 cip--absolute-center-W">
+            <img src="http://via.placeholder.com/450x450/9EAAB8/000000" alt="Novo Trabalho" title="Nome do Trabalho aqui ..." class="cip--responsive-img cip--shadow-z15">
+          </div>
+          <div class="cip--clearfix"></div>
+        </div>
+
+        <!--Description News-->
+        <div class="_home_news_desc_container col-12 col-md-6 cip--float-right">
+          <h2 class="_home_news_desc_title cip--tx-smooth cip--txc-logo-blue cip--tx-shadow-white">Nome do Trabalho</h2>
+
+          <p class="_home_news_desc_content cip--no-margin cip--padding-lr-5 cip--tx-shadow-white cip--txc-grey-dark cip--tx-smooth">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec viverra purus. Sed ultrices nisi sit
+            amet enim finibus, vitae viverra ligula malesuada. Fusce tellus mauris, scelerisque sit amet orci non,
+            pellentesque pharetra risus. Phasellus a enim at mi luctus vehicula. Nullam non malesuada mauris.
+            Pellentesque non nisi bibendum, maximus orci vel, sodales sapien. Praesent laoreet, dui a eleifend venenatis,
+            risus magna dictum lectus, nec maximus arcu neque a lectus. Morbi tincidunt velit eu augue congue pellentesque.
+          </p>
+          <a class="_home_news_desc_link cip--w-100 cip--cur-pointer
+                    cip--txc-blue-dark cip--tx-decor-none cip--tx-right cip--fsz-13
+                    cip--padding-tb-15 cip--tx-italic cip--tx-shadow-white cip--tx-smooth">
+          + Mais Detalhes aqui
+          </a>
+        </div>
+
+      </div>
 
     </article>
     <div class="cip--clearfix"></div>

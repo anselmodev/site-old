@@ -1,15 +1,20 @@
 import * as $ from 'jquery';
 import { TweenLite, TimelineLite, Back, Bounce } from 'gsap';
-import { LogoAnimation } from '../animation/logo.animation';
+
+import { LogoAnimation } from './logo.animation';
+import { LogoPreloderAnimation } from './logo-preloader.animation';
 
 const easeEffOpen  = Back.easeIn.config(0);
 const easeEffClose = Back.easeOut.config(0);
-// let countPreloader = 1;
+
 
 const Preloader = {
   open: ({...opt}) => {
     const options = opt;
-    $('._preloader_loader').fadeOut(5, () => {
+
+    LogoPreloderAnimation.stop();
+
+    $('._preloader_loader').fadeOut('fast', () => {
       TweenLite.to('._preloader_base_line', .7, { ease:  easeEffOpen, width: '100%', opacity: .5, onComplete: () => {
 
         TweenLite.to('._preloader_door_top', 1, {
@@ -47,6 +52,9 @@ const Preloader = {
 
         TweenLite.to('._preloader_base_line', .7, { ease:  easeEffOpen, width: '0%', opacity: 0, onComplete: () => {
           $('._preloader_loader').fadeIn(5, () => {
+
+            LogoPreloderAnimation.play();
+
             // Action after close
             if ( opt.action ) {
               options.action();

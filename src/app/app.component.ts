@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, NavigationStart, NavigationCancel, NavigationEnd } from '@angular/router';
 import { TweenLite } from 'gsap';
-// import * as $ from 'jquery';
+import * as $ from 'jquery';
 
 import { PreloaderService } from './core/service/preloader.service';
 import { CounterService } from './core/service/counter.service';
@@ -43,18 +43,20 @@ export class AppComponent implements OnInit,  AfterViewInit {
         // Iniciar Navegação Router
       } else if ( event instanceof NavigationEnd || event instanceof NavigationCancel ) {
         // Navegação Router Finalizada
-        // Preloader.open({
-        //   action: () => {
-        //     // Somente na pagina home
-        //     if (this._router.url === '/') {
-        //       this.logoHome('show');
-        //     }
-        //   }
-        // });
+        // setTimeout(() => {
+          Preloader.open({
+            action: () => {
+              // Somente na pagina home
+              if (this._router.url === '/') {
+                this.logoHome('show');
+              }
+            }
+          });
+        // }, 4000);
       }
     });
 
-    Preloader.isOpen();
+    // Preloader.isOpen();
   }
 
   // Acionar Animação Logo
@@ -62,14 +64,15 @@ export class AppComponent implements OnInit,  AfterViewInit {
     this.logoHome(event.logo);
   }
 
-  // Animar Logotipo Home
+  // Animar Logotipo Home e Exibir conte o home
   logoHome(type) {
-    LogoAnimation.init(this.logoId, 1, 'true');
+    LogoAnimation.init(this.logoId, .8, 'true');
     if (type === 'show') {
       LogoAnimation.show();
       setTimeout(() => {
-        TweenLite.to('._home_content', .3, {opacity: 1});
-      }, 3500);
+        $('._home_wait').hide();
+        $('._home_slogan, ._home_news').fadeIn('fast');
+      }, 2500);
     } else if (type === 'hide') {
       LogoAnimation.hide();
     }
@@ -89,12 +92,12 @@ export class AppComponent implements OnInit,  AfterViewInit {
         if (this._router.url === '/') {
             this.actionLogoHomeShine('stop');
         }
-        // Preloader.close({
-        //   currentSection: this._router.url,
-        //   action: () => {
-        //     this._router.navigate([this.sectionWatch.sectionRouter]);
-        //   }
-        // });
+        Preloader.close({
+          currentSection: this._router.url,
+          action: () => {
+            this._router.navigate([this.sectionWatch.sectionRouter]);
+          }
+        });
       }
     }
   }

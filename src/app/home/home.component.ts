@@ -1,9 +1,8 @@
-import { Component, OnInit, AfterViewInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 
 import * as $ from 'jquery';
-// declare var particlesJS: any;
 
 import { PreloaderService } from '../core/service/preloader.service';
 
