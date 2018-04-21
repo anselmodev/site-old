@@ -1,8 +1,9 @@
 import { Component, OnInit, AfterViewInit, Output, EventEmitter } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { ModalAnimation } from '../../core/animation/modal.animation';
 
 import { PreloaderService } from '../../core/service/preloader.service';
+import { WindowResize } from '../../core/utility/windowsize.utility';
 
 @Component({
   selector: 'cip-footer',
@@ -17,21 +18,7 @@ export class FooterComponent implements OnInit, AfterViewInit {
   constructor(private _router: Router, private _prealoderServ: PreloaderService) { }
 
   ngOnInit() {
-    ModalAnimation.init({
-      type: '',
-      width: '50%',
-      height: '60%',
-      title: 'Tecnologias Utilizadas',
-      content: 'Conteúdo aqui...',
-      btnSuccess: 'OK',
-      btnCancel: 'Cancelar',
-      onConfirm: () => {
-        this.closeAboutSite();
-      },
-      onCancel: () => {
-        this.closeAboutSite();
-      }
-    });
+
   }
 
   ngAfterViewInit() {
@@ -45,8 +32,32 @@ export class FooterComponent implements OnInit, AfterViewInit {
   }
 
   openAboutSite() {
-    ModalAnimation.show();
-    this.logoShineEventEmiter.emit('stop');
+    let setW, setH;
+    if (WindowResize.get('w') < 768) {
+      setW = '100%';
+      setH = '100%';
+    } else {
+      setW = '70%';
+      setH = '70%';
+    }
+
+    ModalAnimation.init({
+      type: '',
+      width: setW,
+      height: setH,
+      title: 'Tecnologias Utilizadas',
+      content: 'aaahhh: <b class="cip--txc-blue">Conteúdo aqui...</b>',
+      btnSuccess: 'OK',
+      btnCancel: 'Cancelar',
+      onConfirm: () => {
+        this.closeAboutSite();
+      },
+      onCancel: () => {
+        this.closeAboutSite();
+      }
+    });
+      ModalAnimation.show();
+      this.logoShineEventEmiter.emit('stop');
   }
 
   closeAboutSite() {

@@ -1,3 +1,66 @@
+<!-- Modal -->
+<cip-modal modalId="{{ modalId }}">
+  <!--Close Modal-->
+  <a class="_modal_btn_close cip--cur-pointer cip--pos-absolute cip--fsz-22 cip--zindex-1" (click)="modalGalery()">
+    <i class="fa fa-times-circle cip--opac-3"></i>
+  </a>
+  <div class="_modal_content cip--pos-absolute cip--w-100 cip--h-100 cip--ovf-x cip--ovf-y-auto">
+    <div class="row no-gutters cip--pos-relative">
+      <!--head-->
+        <div class="_modal_galery_head col-12">
+          <p class="cip--no-margin cip--txc-blue-dark">
+            <span class="cip--rotate-45 cip--pos-relative cip--opac-3 cip--bgc-logo-blue"></span>
+            Título do Projeto
+          </p>
+        </div>
+
+      <!--Gallery-->
+      <div class="_modal_galery_image_container col-12 col-md-6">
+        <p class="cip--tx-center cip--no-margin cip--pos-relative">
+          <span class="_modal_galery_slide_left cip--h-100 cip--pos-absolute">
+            <a class="_modal_galery_slide_wh cip--absolute-center-H cip--opac-3"
+                (click)="slideImage('prev')">
+              <i class="fa fa-angle-left cip--no-margin cip--no-padding"></i>
+            </a>
+          </span>
+          <span class="_modal_galery_slide_right cip--h-100 cip--pos-absolute">
+            <a class="_modal_galery_slide_wh cip--absolute-center-H cip--opac-3"
+               (click)="slideImage('next')">
+              <i class="fa fa-angle-right cip--no-margin cip--no-padding"></i>
+            </a>
+          </span>
+          <img src="{{ workDetail.images }}" alt="{{ workDetail.title }}" title="{{ workDetail.title }}" class="cip--responsive-img">
+        </p>
+      </div>
+
+      <!--Description-->
+      <div class="_modal_galery_desc_container col-12 col-md-6 cip--pos-relative">
+        <div class="_work_modal_desc_content cip--pos-relative">
+          <p class="_work_modal_desc_title cip--txc-grey-dark cip--no-margin">{{ workDetail.title }}</p>
+          <small class="_work_modal_desc_year cip--txc-grey">Ano: {{ workDetail.year }}</small>
+          <p class="_work_modal_desc_subtit cip--txc-grey-dark cip--tx-italic cip--no-margin">Tecnologias Utilizadas:</p>
+          <div class="_work_modal_desc_details cip--txc-grey-dark">
+            <p class="_work_modal_desc_item" *ngFor="let wDetail of workDetail.tecnology">
+              <span class="cip--rotate-45 cip--pos-relative cip--opac-3 cip--bgc-grey"></span>
+              {{ wDetail.name }}
+          </p>
+          </div>
+        </div>
+
+        <div class="_work_modal_footer cip--pos-absolute">
+          <p class="_work_modal_footer_custm cip--txc-grey-dark cip--no-margin">
+            <b>Cliente: {{workDetail.customer}}</b>
+          </p>
+          <p class="_work_modal_footer_copy cip--txc-grey cip--no-margin">
+            © 2018 Todos os Direitos Reservados
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</cip-modal>
+
 <section class="_section_container row no-gutters cip--pos-relative">
   <h2 class="cip--tx-none"> {{ titlePageContent }} </h2>
 
@@ -6,9 +69,45 @@
 
     <cip-bg-pixel imageText="false"></cip-bg-pixel>
 
-    <article class="_article_content _err404_content cip--w-100 cip--pos-relative">
+    <article class="_article_content _work_content cip--w-100 cip--pos-relative">
 
-      Conteúdo aqui...
+      <!--Content O que eu faço-->
+      <div class="row no-gutters">
+        <!--Head-->
+        <div class="col-12 cip--pos-relative">
+          <div class="_content_header_pixel_left _content_header_pixel cip--rotate-45 cip--pos-absolute"></div>
+          <h3 class="_content_header_title_left cip--no-margin cip--tx-smooth cip--tx-weight-light">
+            Trabalhos e Projetos
+          </h3>
+          <p class="_content_header_titlemark_left cip--pos-absolute cip--no-margin">
+            Trabalhos e Projetos
+          </p>
+        </div>
+
+        <!--Content-->
+        <div class="col-12 cip--pos-relative">
+          <h4 class="_content_box_title cip--tx-weight-light cip--tx-center">Websites, Aplicações e Sistemas</h4>
+
+          <!--Work Celll-->
+          <div class="_work_cell_container row no-gutters">
+            <div class="_work_cell col-12 col-sm-6 col-lg-4 col-xl-3 cip--float-left" *ngFor="let workItem of workItems" id="{{ workItem.id }}">
+              <div class="_work_cell_elem ip--w-100 cip--h-100">
+                <a class="_work_cell_link cip--tx-center" title="{{ workItem.title }}">
+                  <div class="_work_cell_pixel cip--shadow-z24-light cip--bgc-white cip--rotate-45 cip--cur-pointer"
+                       (click)="modalGalery(workItem.id)">
+                    <!--<img src="{{ workItem.background }}" alt="">-->
+                  </div>
+                  <p class="_work_cell_title cip--zindex-2  cip--tx-smooth cip--absolute-center-W cip--txc-logo-blue cip--truncate">
+                    {{ workItem.label }}
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
 
     </article>
 

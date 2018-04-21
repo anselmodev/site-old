@@ -16,5 +16,23 @@ const WindowResize = {
   }
 };
 
+const ElementPosition = {
+  get: (elem, type = null) => {
+    if (type === 'position') {
+      return $(elem).position();
+    } else {
+      return $(elem).offset();
+    }
+  },
 
-export { WindowResize };
+  set: (elem, value, type = null) => {
+    if (type === 'position') {
+      $(elem).position(value);
+    } else {
+      $(elem).offset(value);
+    }
+  }
+};
+
+
+export { WindowResize, ElementPosition };

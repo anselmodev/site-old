@@ -9,19 +9,19 @@ export class LogoCipComponent implements OnInit {
   @Input() logoId:       any    = '_logo_cip';
   @Input() showText:     any    = '';
   @Input() size:         any    = '';
-  @Input() animation:    any    = '';
-  @Input() duration:     any    = 1;
-  @Input() delay:        any    = 300;
   @Input() setWatermark: any    = '';
+  @Input() isVisible:    any    = 'false';
 
   pixelsBack = ['lpx0', 'lpx1', 'lpx2', 'lpx3', 'lpx4', 'lpx5', 'lpx6', 'lpx7', 'lpx8', 'lpx9', 'lpx10', 'lpx11', 'lpx12', 'lpx13'];
   logoSize: String;
-  Mylogo;
+  setVisible: String = '';
   watermark: any;
 
   constructor() { }
 
   ngOnInit() {
+    this.setVisible = (this.isVisible === 'true' ? 'cip--opac-10-i' : '');
+
     // Watermark
     this.watermark = (this.setWatermark === 'true' ? '_logo_opacity01' : '');
 
