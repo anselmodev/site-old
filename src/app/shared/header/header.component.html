@@ -21,7 +21,7 @@
     <div class="cip_header_nav_content cip--padding-lr-10 cip--no-margin cip--w-100 cip--pos-relative cip--ovf d-none d-md-block cip--zindex-3">
 
       <a *ngFor="let menuItem of menuItems" class="_header_btn_menu {{ menuItem.color }} cip--margin-lr-10 cip--margin-tb-10 cip--float-right cip--cur-pointer cip--tx-smooth d-sm-block  {{ menuItem.otherClass }}
-      {{ (menuItem.title === linkActive ? ' cip--disabled-opac' : '') }}" title="{{ menuItem.title }}" (click)="linkNavigation(menuItem.link)">
+      {{ (menuItem.pageName === linkActive ? ' cip--disabled-opac' : '') }}" title="{{ menuItem.title }}" (click)="linkNavigation(menuItem.link)">
         <i class="{{ menuItem.icon }}"></i>
         <span class="{{ menuItem.responsiveClass }}">
           {{ menuItem.label }}

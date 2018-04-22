@@ -37,38 +37,6 @@
 }
 
 /*Modal Galery Works*/
-._modal_btn_close{
-  top: 10px;
-  right: 10px;
-  display: none;
-}
-._modal_btn_close:hover{
-  opacity: 8;
-}
-
-._modal_content{
-  display: none;
-  top: 0;
-  left: 0;
-}
-._modal_galery_head{
-  height: 45px;
-  background-color: rgba(255, 255, 255, 0.81);
-}
-._modal_galery_head>p{
-  padding: 15px 10px;
-}
-._modal_galery_head>p>i{
-  top: -2px;
-  padding: 0 3px;
-}
-._modal_galery_head>p>span{
-  width: 10px;
-  height: 10px;
-  margin: 0 4px;
-  top: 0px;
-  display: inline-block;
-}
 ._modal_galery_image_container{
   min-height: 300px;
   padding: 3px 5px;

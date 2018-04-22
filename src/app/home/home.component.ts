@@ -43,7 +43,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     } else {
       this.sloganHome = true;
     }
-    // this.linkNavigation(null);
   }
 
   linkNavigationName(linkName) {

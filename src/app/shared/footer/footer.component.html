@@ -1,4 +1,128 @@
 <footer class="_footer row cip--pos-fixed no-gutters cip--w-100 cip--zindex-5">
+  <!-- Modal -->
+  <cip-modal modalId="{{ modalId }}">
+    <!--Close Modal-->
+    <a class="_modal_btn_close cip--cur-pointer cip--pos-absolute cip--fsz-22 cip--zindex-1" (click)="aboutSite(false)">
+      <i class="fa fa-times-circle cip--opac-3"></i>
+    </a>
+    <div class="_modal_content cip--pos-absolute cip--w-100 cip--h-100 cip--ovf-x cip--ovf-y-auto">
+      <div class="row no-gutters cip--pos-relative">
+
+        <!--head-->
+        <div class="_modal_content_head col-12">
+          <p class="cip--no-margin cip--txc-blue-dark">
+            <span class="cip--rotate-45 cip--pos-relative cip--opac-3 cip--bgc-logo-blue"></span>
+            Sobre Este Site
+          </p>
+        </div>
+
+        <!--Content-->
+        <div class="_modal_content_about col-12">
+          <div class="row no-gutters">
+            <!--Logo-->
+            <div class="_modal_content_about_logo col-12">
+              <div class="_modal_about_logo cip--absolute-center-W">
+                <cip-logo logoId="cip_logo_about" size="xs" showText="true" isVisible="true"></cip-logo>
+              </div>
+            </div>
+            <!--Content-->
+            <div class="col-12">
+              <p class="_modal_content_about_credits cip--tx-center cip--w-100 cip--fsz-12 cip--txc-grey cip--no-margin">
+                <small class="">Versão 1.2 - 20/03/2018</small><br>
+                <small class="">&copy; CodeInPixel Studios - Todos os Direitos Reservados!</small><br>
+                <small class="">Autor e Desenvolvedor: <b>Anselmo Lima</b></small><br><br>
+                <a class="cip--txc-blue cip--cur-pointer" (click)="linkNavigation('sobre-mim')">Sobre o Autor</a><br>
+              </p>
+              <div class="cip--divider-blue cip--opac-1"></div>
+            </div>
+
+            <div class="_modal_content_about_info col-12">
+              <h3 class="cip--tx-center cip--txc-orange cip--tx-smooth">Como Isto Foi Feito?</h3>
+              <div class="row no-gutters">
+                <!--Tecnologias-->
+                <div class="_modal_content_about_info col-12 col-md-6">
+                  <p class="cip--txc-grey cip--fsz-13 cip--tx-italic cip--tx-smooth">Tecnologias Utilizadas:</p>
+                  <p class="cip--txc-grey cip--fsz-12 cip--padding-lr-10 cip--tx-smooth" *ngFor="let itemTec of tecnologyList">
+                    <i class="fa fa-square cip--opac-5 cip--rotate-45 cip--fsz-10"></i>
+                    {{ itemTec.title }}
+                  </p>
+                  <div class="_content_divider_space_sm"></div>
+                </div>
+
+                <!--Frameworks e Librarys-->
+                <div class="_modal_content_about_info col-12 col-md-6">
+                  <p class="cip--txc-grey cip--fsz-13 cip--tx-italic cip--tx-smooth">Frameworks e Bibliotecas:</p>
+                  <p class="cip--txc-grey cip--fsz-12 cip--padding-lr-10 cip--tx-smooth" *ngFor="let itemLibs of frameworLibList">
+                    <a href="{{ itemLibs.link }}" target="_blank" class="cip--txc-blue cip--tx-decor-none cip--cur-pointer" title="{{ itemLibs.title }}">
+                      <i class="fa fa-square cip--opac-5 cip--rotate-45 cip--fsz-10"></i>
+                      {{ itemLibs.title }}
+                    </a>
+                  </p>
+                  <div class="_content_divider_space_sm"></div>
+                </div>
+
+                <!--Otimizações-->
+                <div class="_modal_content_about_info col-12 col-md-6">
+                  <p class="cip--txc-grey cip--fsz-13 cip--tx-italic cip--tx-smooth">Otimizações:</p>
+                  <p class="cip--txc-grey cip--fsz-12 cip--padding-lr-10 cip--tx-smooth" *ngFor="let itemOptim of optimizekList">
+                    <i class="fa fa-square cip--opac-5 cip--rotate-45 cip--fsz-10"></i>
+                    {{ itemOptim.title }}
+                  </p>
+                  <div class="_content_divider_space_sm"></div>
+                </div>
+
+                <!--Host-->
+                <div class="_modal_content_about_info col-12 col-md-6">
+                  <p class="cip--txc-grey cip--fsz-13 cip--tx-italic cip--tx-smooth">Hospedagens e Serviços:</p>
+                  <p class="cip--txc-grey cip--fsz-12 cip--padding-lr-10 cip--tx-smooth" *ngFor="let itemHost of hostdbList">
+                    <a href="{{ itemHost.link }}" target="_blank" class="cip--txc-blue cip--tx-decor-none cip--cur-pointer" title="{{ itemHost.title }}">
+                      <i class="fa fa-square cip--opac-5 cip--rotate-45 cip--fsz-10"></i>
+                      {{ itemHost.title }}
+                    </a>
+                  </p>
+                  <div class="_content_divider_space_sm"></div>
+                </div>
+
+                <!--Tools-->
+                <div class="_modal_content_about_info col-12 col-md-6">
+                  <p class="cip--txc-grey cip--fsz-13 cip--tx-italic cip--tx-smooth">Ferramentas:</p>
+                  <p class="cip--txc-grey cip--fsz-12 cip--padding-lr-10 cip--tx-smooth" *ngFor="let itemTools of toolsList">
+                    <i class="fa fa-square cip--opac-5 cip--rotate-45 cip--fsz-10"></i>
+                    {{ itemTools.title }}
+                  </p>
+                  <div class="_content_divider_space_sm"></div>
+                </div>
+
+                <!--Outros-->
+                <div class="_modal_content_about_info col-12 col-md-6">
+                  <p class="cip--txc-grey cip--fsz-13 cip--tx-italic cip--tx-smooth">Outras Ferramentas e Serviços:</p>
+                  <p class="cip--txc-grey cip--fsz-12 cip--padding-lr-10 cip--tx-smooth" *ngFor="let itemOther of othersList">
+                    <a href="{{ itemOther.link }}" target="_blank" class="cip--txc-blue cip--tx-decor-none cip--cur-pointer" title="{{ itemOther.title }}">
+                      <i class="fa fa-square cip--opac-5 cip--rotate-45 cip--fsz-10"></i>
+                      {{ itemOther.title }}
+                    </a>
+                  </p>
+                  <div class="_content_divider_space_sm"></div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="_modal_content_about_info col-12">
+              <p class="cip--w-100 cip--tx-center cip--fsz-14 cip--tx-smooth">
+                <a class="cip--txc-blue cip--tx-decor-none cip--cur-pointer" title="Termo de Uso e Privacidade">
+                  <i class="fa fa-info-circle cip--opac-5"></i>
+                  Termos de Uso e Privacidade
+                </a>
+              </p>
+
+              <div class="_content_divider_space_md"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </cip-modal>
 
   <!-- Content -->
   <div class="_footer_content col-12 row no-gutters">
@@ -30,7 +154,7 @@
     <!-- About This Site -->
     <div class="_footer_content_about _footer_content_cell col-6 col-sm-4 cip--pos-relative">
       <a rel="About this site" class="_footer_about_site cip--fsz-13 cip--rad4 cip--cur-pointer cip--pos-relative"
-         (click)="openAboutSite()">
+         (click)="aboutSite(true)">
         <p class="cip--w-100 cip--no-margin cip--txc-logo-blue cip--tx-smooth cip--opac-5 cip--tx-italic cip--fsz-10">
           <img src="assets/svg/info2.svg" alt="Informações" title="Informações Sobre este Site" width="15" class="cip--pos-relative cip--opac-5">
           <span>About This Site</span>

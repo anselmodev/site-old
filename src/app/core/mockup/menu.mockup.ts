@@ -5,6 +5,7 @@ const menuItensHeader = [
   {
     color: '_header_btn_menu_blue',
     title: 'Fale Comigo e Solicite um Orçamento',
+    pageName: 'Fale Comigo',
     label: 'Contato',
     link: 'fale-comigo',
     otherClass: '',
@@ -13,14 +14,16 @@ const menuItensHeader = [
   {
     color: '_header_btn_menu_blue',
     title: 'Veja meus trabalhos realizados e conceitos de projetos.',
+    pageName: 'Trabalhos e Projetos',
     label: 'Trabalhos',
-    link: 'trabalhos-conceitos',
+    link: 'trabalhos-projetos',
     otherClass: '',
     icon: iconMenuHeader
   },
   {
     color: '_header_btn_menu_blue',
     title: 'As Tecnologias com qual eu trabalho e tipos de serviços.',
+    pageName: 'Serviços e Tecnologias',
     label: 'Serviços',
     link: 'servicos-tecnologias',
     otherClass: '',
@@ -28,7 +31,8 @@ const menuItensHeader = [
   },
   {
     color: '_header_btn_menu_blue',
-    title: 'Sobre Mim',
+    title: 'Sobre Mim / Meu Perfil',
+    pageName: 'Sobre Mim',
     label: 'Sobre',
     link: 'sobre-mim',
     otherClass: '',
@@ -48,6 +52,7 @@ const menuItensHeader = [
 const menuItensResponsive = [
   {
     title: 'Quem sou eu? Veja minha trajetória...',
+    pageName: 'Sobre Mim',
     label: 'Sobre',
     link: 'sobre-mim',
     otherClass: '',
@@ -55,6 +60,7 @@ const menuItensResponsive = [
   },
   {
     title: 'As Tecnologias com qual eu trabalho e tipos de serviços.',
+    pageName: 'Serviços e Tecnologias',
     label: 'Serviços',
     link: 'servicos-tecnologias',
     otherClass: '',
@@ -62,13 +68,15 @@ const menuItensResponsive = [
   },
   {
     title: 'Veja meus trabalhos realizados e conceitos de projetos.',
+    pageName: 'Trabalhos e Projetos',
     label: 'Trabalhos',
-    link: 'trabalhos-conceitos',
+    link: 'trabalhos-projetos',
     otherClass: '',
     icon: iconMenuResp
   },
   {
     title: 'Que tal um orçamento, tirar dúvidas ou uma consultoria?',
+    pageName: 'Fale Comigo',
     label: 'Contato',
     link: 'fale-comigo',
     otherClass: '',
@@ -77,6 +85,7 @@ const menuItensResponsive = [
   {
     title: 'Área Restrita ao Cliente',
     link: 'login-cliente',
+    pageName: 'Área Restria do Cliente',
     label: 'Área do Cliente',
     otherClass: 'cip_responsive_links_item_customer',
     icon: 'fa fa-user-circle cip--fsz-18 cip--opac-6 cip--pos-relative'

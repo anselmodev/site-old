@@ -22,6 +22,7 @@ export class ResponsiveMenuComponent implements OnInit {
     this._prealoderServ.sectionRequest.subscribe(sectionRes => {
       this.pageName = sectionRes['sectionRouterName'];
     });
+
   }
 
   // Router Navigation

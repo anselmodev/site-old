@@ -66,6 +66,23 @@
 ._footer_about_site:hover{
   background-color: rgba(92, 115, 142, 0.13);
 }
+
+/*MODAL ABOUT SITE*/
+._modal_content_about_logo{
+  height: 160px;
+}
+._modal_about_logo{
+  width: 120px;
+  height: 105px;
+  top: 50px;
+}
+._modal_content_about_credits{
+
+}
+._modal_content_about_info{
+  padding: 0 20px !important;
+}
+
 /* ###################################### MEDIA QUERY ###################################### */
 /* Max. width 575px - small devices */
 
@@ -84,6 +101,9 @@
 @media (min-width: 768px){
   ._footer_slogan{
     font-size: 50px;
+  }
+  ._modal_content_about_info{
+    padding: 0 50px !important;
   }
 }
 

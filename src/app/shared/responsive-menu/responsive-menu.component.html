@@ -18,7 +18,7 @@
 
   <div #menuResp class="cip_responsive_links cip--w-80 cip--h-80 cip--absolute-center">
     <button *ngFor="let menuItem of menuItems" class="cip_responsive_links_item cip--btn cip--btn-transparent-white cip--btn-lg cip--w-100 cip--tx-center {{ menuItem.otherClass }}
-            {{ (menuItem.title === pageName ? ' cip--disabled-opac' : '') }}" (click)="linkNavigation(menuItem.link)" title="{{ menuItem.title }}" >
+            {{ (menuItem.pageName === pageName ? ' cip--disabled-opac' : '') }}" (click)="linkNavigation(menuItem.link)" title="{{ menuItem.title }}" >
       <i class="{{ menuItem.icon }}"></i> {{ menuItem.label }}
     </button>
 
