@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
 import { ContactComponent } from './contact.component';
@@ -13,6 +14,8 @@ const contactRoutes: Routes = [{ path: '', component: ContactComponent }];
   imports: [
     CommonModule,
     RouterModule.forChild(contactRoutes),
+    FormsModule,
+    ReactiveFormsModule,
     SharedModule
   ],
   exports: [],

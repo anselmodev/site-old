@@ -11,6 +11,7 @@ import { CounterService } from './core/service/counter.service';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { PreloaderComponent } from './shared/preloader/preloader.component';
+import { ContactFormService } from './core/service/contact-form.service';
 import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(localePt);
@@ -44,6 +45,7 @@ export class HammerConfig extends HammerGestureConfig {
     HttpClientModule,
     PreloaderService,
     CounterService,
+    ContactFormService,
     {
       provide: HAMMER_GESTURE_CONFIG,
       useClass: HammerConfig

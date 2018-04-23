@@ -24,33 +24,52 @@
 
         <!--FORM-->
         <div class="col-12">
-          <form novalidate>
+          <form  [formGroup]="contactForm" novalidate>
             <div class="row no-gutters">
               <div class="form-group col-12">
                 <label for="contact_name"><span class="cip--txc-orange">*</span> Seu Nome</label>
-                <input type="text" class="form-control" id="contact_name" placeholder="Digite seu nome ...">
-                <small class="cip--tx-italic d-none">Desculpe, mas preciso saber o seu nome!</small>
+                <input formControlName="contact_name" (keypress)="pulseCp($event)" type="text" class="form-control" id="contact_name" placeholder="Digite seu nome ..." autocomplete="off"
+                       [ngClass]="{'form_valid': contactForm.controls.contact_name.valid}">
+                <small class="cip--tx-italic cip--txc-red d-none">
+                  <i class="fa fa-hand-o-right"></i>
+                  Insira seu nome!
+                </small>
+                <em class="cip--fsz-9 cip--txc-grey cip--float-right cip--padding-5">( Mín. 5 Caract. )</em>
               </div>
               <div class="form-group col-12 col-md-6">
                 <label for="contact_email"><span class="cip--txc-orange">*</span> Seu Melhor E-mail</label>
-                <input type="email" class="_contact_inpt_90 form-control" id="contact_email" placeholder="Digite seu e-mail ...">
-                <small class="cip--tx-italic d-none">Um e-mail válido ajudará contata-lo!</small>
+                <input formControlName="contact_email" (keypress)="pulseCp($event)" type="email" class="_contact_inpt_90 form-control" id="contact_email" placeholder="Digite seu e-mail ..."
+                       [ngClass]="{'form_valid': contactForm.controls.contact_email.valid}">
+                <small class="cip--tx-italic cip--txc-red d-none">
+                  <i class="fa fa-hand-o-right"></i>
+                  Insira  um e-mail válido!
+                </small>
               </div>
               <div class="form-group col-12 col-md-6">
                 <label for="contact_phone"><span class="cip--txc-orange">*</span> Seu Telefone ou WhatsApp</label>
-                <input type="email" class="form-control" id="contact_phone" placeholder="Digite um telefone ...">
-                <small class="cip--tx-italic d-none">Que tal um telefone ou seu Whats para contata-lo mais rápido?</small>
+                <input formControlName="contact_phone" (keypress)="pulseCp($event)" type="text" class="form-control" id="contact_phone" placeholder="Digite um telefone ..."
+                       [ngClass]="{'form_valid': contactForm.controls.contact_phone.valid}">
+                <small class="cip--tx-italic cip--txc-red d-none">
+                  <i class="fa fa-hand-o-right"></i>
+                  Insira um número válido!
+                </small>
               </div>
               <div class="form-group col-12">
-                <label for="contact_description">Descreva como posso ajuda-lo(a)</label>
-                <textarea class="form-control" id="contact_description" rows="6"></textarea>
-                <small class="cip--tx-italic d-none">Uma breve descrição seria ótimo para lhe atender melhor!</small>
+                <label for="contact_description"><span class="cip--txc-orange">*</span> Descreva como posso ajuda-lo(a)</label>
+                <textarea formControlName="contact_desc" (keypress)="pulseCp($event)" class="form-control" id="contact_description" rows="6"
+                          [ngClass]="{'form_valid': contactForm.controls.contact_desc.valid}"></textarea>
+                <small class="cip--tx-italic cip--txc-red d-none">
+                  <i class="fa fa-hand-o-right"></i>
+                  Insira uma descrição!
+                </small>
+                <em class="cip--fsz-9 cip--txc-grey cip--float-right cip--padding-5">( Mín. 20 Caract. )</em>
               </div>
             </div>
 
             <small class="cip--txc-orange cip--fsz-10 cip--tx-italic">*Obrigatório</small>
 
-            <button type="submit" class="_contact_button _contact_button_blue cip--margin-lr-10 cip--margin-tb-10 cip--float-right cip--cur-pointer cip--tx-smooth">
+            <button type="submit" class="_contact_button _contact_button_blue cip--margin-lr-10 cip--margin-tb-10 cip--float-right cip--cur-pointer cip--tx-smooth"
+                    (click)="submitForm(contactForm.value)" [ngClass]="{'cip--disabled-opac': !contactForm.valid}">
               <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6 "></i>
               Enviar Agora
             </button>

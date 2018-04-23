@@ -29,6 +29,7 @@
 .form-group.has-success .error {
   display: none !important;
 }
+
 .form-control {
   display: block;
   width: 100%;
@@ -137,6 +138,12 @@ label {
   font-size: 40px;
   top: 0px;
   left: 0;
+}
+
+.form_valid{
+  border-color: #9ec3a0;
+  color: #56ab5a;
+  background-color: #fcfffc;
 }
 /* ###################################### MEDIA QUERY ###################################### */
 @media (min-width: 560px){
