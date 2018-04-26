@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import * as $ from 'jquery';
 
@@ -9,7 +9,7 @@ import { PreloaderService } from '../core/service/preloader.service';
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.scss']
 })
-export class AboutMeComponent implements OnInit {
+export class AboutMeComponent implements OnInit, AfterViewInit {
   titlePage: any = 'Sobre Mim, Desenvolvedor - CodeInPixel';
 
   constructor(
@@ -27,6 +27,10 @@ export class AboutMeComponent implements OnInit {
     $('body, .cip_main').css('height', 'auto');
     this.titleService.setTitle(this.titlePage);
     this.linkNavigationName('Sobre Mim');
+  }
+
+  ngAfterViewInit() {
+
   }
 
   linkNavigationName(linkName) {

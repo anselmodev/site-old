@@ -1,6 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, NavigationStart, NavigationCancel, NavigationEnd } from '@angular/router';
-import { TweenLite } from 'gsap';
 import * as $ from 'jquery';
 
 import { PreloaderService } from './core/service/preloader.service';
@@ -40,23 +39,19 @@ export class AppComponent implements OnInit,  AfterViewInit {
     // Router Event
     this._router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        // Iniciar Navegação Router
+        // Ao Iniciar navegação
       } else if ( event instanceof NavigationEnd || event instanceof NavigationCancel ) {
         // Navegação Router Finalizada
-        // setTimeout(() => {
-          Preloader.open({
-            action: () => {
-              // Somente na pagina home
-              if (this._router.url === '/') {
-                this.logoHome('show');
-              }
+        Preloader.open({
+          action: () => {
+            // Somente na pagina home
+            if (this._router.url === '/') {
+              this.logoHome('show');
             }
-          });
-        // }, 4000);
+          }
+        });
       }
     });
-
-    // Preloader.isOpen();
   }
 
   // Acionar Animação Logo

@@ -75,7 +75,11 @@ export class ContactComponent implements OnInit {
     dataForm['contact_date'] = this.datePipe.transform(this.dateNow, 'yyyy-MM-dd H:mm:ss');
     // Salvar dados e enviar e-mail
     this._contactList.setContact(dataForm).then((res) => {
-      console.log(res);
+      if (res === true) {
+        console.log('Enviar email');
+      } else {
+        console.log('Erro ao enviar e-mail. Porém os dados foram salvos.');
+      }
     });
   }
 

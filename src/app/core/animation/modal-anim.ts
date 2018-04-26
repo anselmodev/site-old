@@ -4,7 +4,7 @@ import { TweenLite, Expo } from 'gsap';
 let timerShadow = null;
 
 const ModalAnimation = {
-  open: (idModal) => {
+  open: (idModal, action?) => {
     $(`${ idModal }, ${ idModal } ._modal_cip_overlay`).show();
     TweenLite.to('._modal_pixels_item', .8, {
       ease: Expo.easeOut, scale: 1, rotation: 45,
@@ -18,10 +18,13 @@ const ModalAnimation = {
       onComplete: () => {
         // Show Content
         $(`${ idModal } ._modal_container ._modal_content, ${ idModal } ._modal_container ._modal_btn_close`).show();
+        if (action) {
+          action();
+        }
       }
       }, 0.05);
   },
-  close: (idModal) => {
+  close: (idModal, action?) => {
     // Hide Content
     $(`${ idModal } ._modal_container ._modal_content, ${ idModal } ._modal_container ._modal_btn_close`).hide();
 
@@ -34,7 +37,12 @@ const ModalAnimation = {
     clearTimeout(timerShadow);
     $(`${ idModal } ._modal_container`).removeClass('cip--shadow-z15');
 
-    TweenLite.to('._modal_pixels_item', .8, { ease: Expo.easeOut, scale: 0, rotation: 0 }, 0.05);
+    TweenLite.to('._modal_pixels_item', .8, { ease: Expo.easeOut, scale: 0, rotation: 0, onComplete: () => {
+        if (action) {
+          console.log('action after close');
+          action();
+        }
+      } }, 0.05);
   }
 
 };

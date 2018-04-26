@@ -1,7 +1,10 @@
 import * as $ from 'jquery';
 import { TweenLite, TimelineLite, Back } from 'gsap';
 
-let rev = false, timeAnim = 10;
+const timeAnim = 10;
+let rev = false;
+
+this.timerFadeBg = null;
 
 const BackgroundAnimation = {
   init: () => {

@@ -2,8 +2,11 @@ import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import * as $ from 'jquery';
 
 import { UserAgent } from '../../core/utility/user-agent.utility';
-
+import { PreloaderService } from '../../core/service/preloader.service';
 import { BackgroundAnimation } from '../../core/animation/pixels.animation';
+import {
+  bgPixelsHome, bgPixelsAbout, bgPixelsServices, bgPixelsWorks, bgPixelsContact, bgPixels404
+} from '../../core/mockup/images-bgpixel.mockup';
 
 @Component({
   selector: 'cip-bg-pixel',
@@ -11,18 +14,55 @@ import { BackgroundAnimation } from '../../core/animation/pixels.animation';
   styleUrls: ['./bg-pixel.component.scss']
 })
 export class BgPixelComponent implements OnInit, AfterViewInit {
-  @Input() imageText: String;
+  @Input() sectionImages: any;
 
-  imageTextClass;
+  getImagesSection: any = null;
   getOsUser: any = UserAgent.get('os', 'name');
+  timerFadeBg = null;
 
-  constructor() { }
+  constructor(private _prealoderServ: PreloaderService) {}
 
   ngOnInit() {
-    // Image on Pixel Back
-    if (this.imageText === 'false') {
-      this.imageTextClass = '_pix_bg_item2_no_img';
-    }
+    // BG Pixels
+    this._prealoderServ.sectionRequest.subscribe(sectionRes => {
+      if (sectionRes.sectionRouterName !== undefined) {
+        clearInterval(this.timerFadeBg);
+        this.timerFadeBg = null;
+
+        let lastImg = 0;
+        switch (sectionRes.sectionRouterName) {
+          case 'Sobre Mim':
+            this.getImagesSection = bgPixelsAbout;
+            clearInterval(this.timerFadeBg);
+            this.timerFadeBg = setInterval(() => {
+              const bgFade = Math.floor(Math.random() * 5);
+
+              if (bgFade !== lastImg) {
+                $('#bgPixel2>img').fadeOut('fast');
+                $(`#imageBg_${bgFade}`).fadeIn('fast');
+                lastImg = bgFade;
+              }
+            }, 4000);
+
+            break;
+          case 'Serviços e Tecnologias':
+            this.getImagesSection = bgPixelsServices;
+            break;
+          case 'Trabalhos e Projetos':
+            this.getImagesSection = bgPixelsWorks;
+            break;
+          case 'Fale Comigo':
+            this.getImagesSection = bgPixelsContact;
+            break;
+          case 'Erro 404':
+            this.getImagesSection = bgPixels404;
+            break;
+          default:
+            this.getImagesSection = bgPixelsHome;
+            break;
+        }
+      }
+    });
     if (
       this.getOsUser === 'macosx' ||
       this.getOsUser === 'windows' ||
@@ -40,18 +80,15 @@ export class BgPixelComponent implements OnInit, AfterViewInit {
     ) {
       const DOC = $(document);
       let scrollStart = false;
-      // Scroll Animation Pixel
       DOC.scroll(function () {
         if (!scrollStart) {
           scrollStart = true;
-          // background animation start
           BackgroundAnimation.start();
         }
 
         clearTimeout($.data(this, 'scrollCheck'));
         $.data(this, 'scrollCheck', setTimeout(function () {
           scrollStart = false;
-          // background animation stop
           BackgroundAnimation.stop();
         }, 250));
       });

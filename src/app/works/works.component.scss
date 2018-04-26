@@ -2,15 +2,15 @@
   padding: 20px 10% 20px 10%;
 }
 ._work_cell_container{
-  margin-top: 70px;
+  margin-top: 10px;
 }
 ._work_cell{
-  margin-bottom: 110px;
+  margin: 0 auto 110px auto;
 }
 ._work_cell_pixel{
   width: 160px;
   height: 160px;
-  border: 0.5px solid #c0c0c0;
+  //border: 0.5px solid #c0c0c0;
   margin: 0 auto;
   -webkit-transition: .3s;
   transition: .3s;
@@ -28,7 +28,7 @@
 ._work_cell_title{
   text-align: center;
   display: inline-block;
-  bottom: 10px !important;
+  bottom: -60px !important;
 }
 ._content_header_titlemark_left{
   font-size: 35px;
@@ -38,7 +38,7 @@
 
 /*Modal Galery Works*/
 ._modal_galery_image_container{
-  min-height: 300px;
+  min-height: 400px;
   padding: 3px 5px;
 }
 ._modal_galery_slide_wh{
@@ -51,11 +51,13 @@
   width: 50px;
   font-size: 110px;
   left: 10px;
+  display: none;
 }
 ._modal_galery_slide_right{
   width: 50px;
   font-size: 110px;
   right: 10px;
+  display: none;
 }
 ._modal_galery_slide_right>a{
   padding-left: 10px;
@@ -63,6 +65,7 @@
 ._modal_galery_slide_left>a:hover,
 ._modal_galery_slide_right>a:hover{
   opacity: .5;
+  -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1); transform: scale(1.1);
 }
 
 ._modal_galery_desc_container{
@@ -109,6 +112,9 @@
 ._work_modal_footer_copy{
   font-size: 11px;
   font-style: italic;
+}
+#work_galery_loader, #work_galery_image{
+  display: none;
 }
 
 /* ###################################### MEDIA QUERY ###################################### */
@@ -187,6 +193,10 @@
   }
   ._content_box_title{
     font-size: 20px;
+  }
+  ._modal_galery_image_container{
+    min-height: 450px;
+    padding: 3px 5px;
   }
   ._modal_galery_desc_container{
     border-top: none;

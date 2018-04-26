@@ -1,10 +1,15 @@
 <div class="_pix_bg cip--h-100 cip--w-100 cip--pos-fixed cip--bgc-white">
-    <div id="bgPixel1" class="_pix_bg_item1 cip--opac-8 cip--rotate-45 cip--pos-absolute"></div>
-    <div id="bgPixel2" class="_pix_bg_item2 {{ imageTextClass }} cip--rotate-45 cip--ovf cip--pos-absolute">
-      <div class="_pix_bg_image_color cip--w-100 cip--h-100"></div>
+    <div class="_pix_bg_container">
+      <div id="bgPixel1" class="_pix_bg_item1 cip--opac-8 cip--rotate-45 cip--pos-absolute"></div>
+      <div id="bgPixel2" class="_pix_bg_item2 cip--rotate-45 cip--ovf cip--pos-absolute">
+        <img *ngFor="let image of getImagesSection; let idImg = index"
+             src="assets/img/{{ image.file }}" alt="{{ image.alt }}" title="{{ image.title }}"
+             class="cip--responsive-img cip--opac-2" id="imageBg_{{ idImg }}">
+        <div class="_pix_bg_image_color cip--w-100 cip--h-100 cip--pos-absolute"></div>
+      </div>
+      <div id="bgPixel3" class="_pix_bg_item3 cip--rotate-45 cip--pos-absolute"></div>
+      <div id="bgPixel4" class="_pix_bg_item4 cip--rotate-45 cip--pos-absolute cip--opac-03"></div>
+      <div id="bgPixel5" class="_pix_bg_item5 cip--rotate-45 cip--pos-absolute cip--opac-4"></div>
+      <div id="bgPixel6" class="_pix_bg_item6 cip--rotate-45 cip--pos-absolute"></div>
     </div>
-    <div id="bgPixel3" class="_pix_bg_item3 cip--rotate-45 cip--pos-absolute"></div>
-    <div id="bgPixel4" class="_pix_bg_item4 cip--rotate-45 cip--pos-absolute cip--opac-03"></div>
-    <div id="bgPixel5" class="_pix_bg_item5 cip--rotate-45 cip--pos-absolute cip--opac-4"></div>
-    <div id="bgPixel6" class="_pix_bg_item6 cip--rotate-45 cip--pos-absolute"></div>
   </div>

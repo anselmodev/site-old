@@ -6,7 +6,9 @@ import { SharedModule } from '../shared/shared.module';
 import { WorksComponent } from './works.component';
 
 // Routes Home Component
-const workRoutes: Routes = [{ path: '', component: WorksComponent }];
+const workRoutes: Routes = [
+  { path: '', component: WorksComponent }
+  ];
 
 @NgModule({
   declarations: [WorksComponent],
