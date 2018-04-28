@@ -26,23 +26,21 @@
         </div>
       </div>
 
-      <div class="_err404_opt_sections row no-gutters">
-        <div class="_err404_opt_sections_content col-12 col-sm-6"
-             *ngFor="let section of sections">
-
-          <a class="_err404_opt_link cip--cur-pointer cip--w-80 cip--h-80"
-             (click)="linkNavigation(section.link)" title="{{ section.title }}">
-
-            <div class="_err404_opt_pixel_back cip--rotate-45 cip--bgc-white cip--shadow-z24-light cip--absolute-center">
-              <!--<img src="{{ section.background }}" alt="{{ section.label }}" title="{{ section.title }}">-->
+      <div class="col-12 cip--pos-relative">
+        <div class="_err404_opt_sections row no-gutters">
+          <div class="_work_cell col-12 col-sm-6 col-lg-4 col-xl-3 cip--float-left" *ngFor="let section of sections">
+            <div class="_work_cell_elem ip--w-100 cip--h-100">
+              <a class="_work_cell_link cip--tx-center" title="{{ section.title }}" (click)="linkNavigation(section.link)">
+                <div class="_work_cell_pixel cip--shadow-z24 cip--bgc-white cip--rotate-45 cip--cur-pointer"
+                     >
+                  <img src="{{ section.file }}" alt="{{ section.label }}" title="{{ section.title }}" class="cip--responsive-img {{ section.otherClass }}">
+                </div>
+                <p class="_work_cell_title cip--zindex-2  cip--tx-smooth cip--absolute-center-W cip--txc-logo-blue cip--truncate">
+                  {{ section.label }}
+                </p>
+              </a>
             </div>
-            <p class="_err404_opt_title cip--absolute-center-W cip--tx-center {{ section.otherClass }} cip--tx-smooth
-                      cip--no-margin cip--zindex-2 cip--fsz-18">
-              {{ section.label }}
-            </p>
-
-          </a>
-
+          </div>
         </div>
       </div>
 

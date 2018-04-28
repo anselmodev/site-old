@@ -1,31 +1,33 @@
+import { CoreConfig } from '../config.core';
+
 const menuSections = [
   {
+    label: 'Um Pouco Mais Sobre Mim',
+    title: 'Veja mais detalhes sobre minha pessoa!',
+    file: `${CoreConfig.assetsPath}/sell1.png`,
+    otherClass: ' cip--opac-5',
+    link: 'sobre-mim'
+  },
+  {
     label: 'Últimos Trabalhos',
-    title: 'Veja meus trabalhos realizados e conceitos de projetos.',
-    background: '',
-    link: 'trabalhos-conceitos',
-    otherClass: 'cip--txc-logo-blue cip--tx-shadow'
+    title: 'Que tal dar uma olhada nos meus trabalhos?',
+    file: `${CoreConfig.assetsPath}/works.jpg`,
+    otherClass: ' cip--opac-5',
+    link: 'trabalhos-projetos'
   },
   {
     label: 'Serviços e Tecnologias',
-    title: 'As Tecnologias com qual eu trabalho e tipos de serviços.',
-    background: '',
-    link: 'servicos-tecnologias',
-    otherClass: 'cip--txc-logo-blue cip--tx-shadow'
+    title: 'Desenvolvendo com as melhores ferramentas!',
+    file: `${CoreConfig.assetsPath}/bg-services.jpg`,
+    otherClass: ' cip--opac-5',
+    link: 'servicos-tecnologias'
   },
   {
     label: 'Dúvidas? Fale Comigo',
-    title: 'Que tal um orçamento, tirar dúvidas ou uma consultoria?',
-    background: '',
-    link: 'fale-comigo',
-    otherClass: 'cip--txc-logo-blue cip--tx-shadow'
-  },
-  {
-    label: 'Área do Cliente - Login',
-    title: 'Acesso exclusixo ao cliente com Projetos, chamados e assitência.',
-    background: '',
-    link: 'login-cliente',
-    otherClass: 'cip--txc-orange cip--tx-bold cip--tx-shadow2'
+    title: 'Exponha suas dúvidas e retornarei em breve!',
+    file: `${CoreConfig.assetsPath}/bg-contact.jpg`,
+    otherClass: ' cip--opac-5',
+    link: 'fale-comigo'
   }
 ];
 

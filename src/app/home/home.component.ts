@@ -6,6 +6,8 @@ import * as $ from 'jquery';
 
 import { PreloaderService } from '../core/service/preloader.service';
 
+import { works } from '../core/mockup/home.mockup';
+
 @Component({
   selector: 'cip-home',
   templateUrl: './home.component.html',
@@ -20,6 +22,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
    ];
   showArticleHome: Boolean = true;
   sloganHome: Boolean = true;
+  homeWorks: any = works;
 
   constructor(private _router: Router, private titleService: Title, private meta: Meta, private _prealoderServ: PreloaderService) {
     this.meta.updateTag({ name: 'description', content: 'Aplicações Mobile, Sites, E-commerce e Sistemas - CodeInPixel Studios' });
@@ -43,6 +46,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     } else {
       this.sloganHome = true;
     }
+  }
+
+  linkNavigation(linkTo) {
+    this._prealoderServ.setSectionRouter({
+      sectionRouter: linkTo,
+      sectionRouterName: 'trabalhos-projetos',
+      preloader: 'close'
+    });
   }
 
   linkNavigationName(linkName) {

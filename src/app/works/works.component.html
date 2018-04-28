@@ -102,7 +102,7 @@
                 <a class="_work_cell_link cip--tx-center" title="{{ workItem.title }}">
                   <div class="_work_cell_pixel cip--shadow-z24 cip--bgc-white cip--rotate-45 cip--cur-pointer"
                        (click)="modalGalery(workItem.id)">
-                    <img src="assets/img/{{ workItem.file }}" alt="{{ workItem.label }}" title="{{ workItem.title }}" class="cip--responsive-img">
+                    <img src="{{ workItem.file }}" alt="{{ workItem.label }}" title="{{ workItem.title }}" class="cip--responsive-img">
                   </div>
                   <p class="_work_cell_title cip--zindex-2  cip--tx-smooth cip--absolute-center-W cip--txc-logo-blue cip--truncate">
                     {{ workItem.label }}

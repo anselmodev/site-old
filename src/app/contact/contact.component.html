@@ -68,23 +68,42 @@
 
             <button type="submit" class="_contact_button _contact_button_blue cip--margin-lr-10 cip--margin-tb-10 cip--float-right cip--cur-pointer cip--tx-smooth"
                     (click)="submitForm(contactForm.value)" [ngClass]="{'cip--disabled-opac': !contactForm.valid}">
-              <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6 "></i>
-              Enviar Agora
+              <span *ngIf="!loaderSubmit">
+                <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6 "></i>
+                Enviar Agora
+              </span>
+              <span *ngIf="loaderSubmit">
+                <i class="fa fa-stop cip--rotate-45 cip--fsz-10 cip--opac-6 fa-spin"></i>
+                Enviando
+              </span>
             </button>
+
+            <div class="cip--float-left cip--w-100" *ngIf="msgSuccess">
+                <p class="cip--tx-center cip--txc-green">
+                  <i class="fa fa-check"></i>
+                  Seu contato foi enviado com sucesso!
+                </p>
+            </div>
 
           </form>
         </div>
 
         <!--FOOTER-->
         <div class="col-12">
-          <p class="cip--txc-grey-dark cip--tx-smooth cip--margin-tb-10 cip--no-margin cip--padding-tb-20 cip--opac-8">
-            Me procure também pelos contatos abaixo:
+          <p class="cip--txc-grey-dark cip--tx-smooth cip--margin-tb-10 cip--no-margin cip--padding-tb-20 cip--opac-8 cip--tx-center">
+            Contate-me também pelas opções abaixo:
           </p>
 
-          <address class="cip--txc-logo-blue cip--fsz-14 cip--tx-smooth cip--margin-tb-10 cip--no-margin cip--padding-tb-20 cip--opac-8">
+          <address class="_contact_address cip--txc-logo-blue cip--fsz-14 cip--tx-smooth cip--margin-tb-10 cip--no-margin cip--padding-tb-20 cip--opac-8 cip--w-100 cip--tx-center">
             Telefone: <b class="cip--padding-lr-10">(11) 3938-9661</b><br>
-            WhatsApp: <a class="cip--txc-logo-blue cip--tx-decor-none" href="#"><b class="cip--padding-lr-10">(11) 97405-5235</b></a><br>
-            E-mail: <a class="cip--txc-logo-blue cip--tx-decor-none" href="mailto:contato@codeinpixel.com"><b class="cip--padding-lr-10">contato@codeinpixel.com</b></a><br> <br>
+            WhatsApp: <a class="cip--txc-logo-blue cip--tx-decor-none"
+                         href="https://api.whatsapp.com/send?phone=5511964899311&text=Sua%20duvida:%20"
+                         title="Contate-me pelo WhatsApp!" target="_blank">
+                        <b class="cip--padding-lr-10">(11) 97405-5235</b>
+                      </a><br>
+            E-mail: <a class="cip--txc-logo-blue cip--tx-decor-none" href="mailto:ola@codeinpixel.com" title="Evie uma Mensagem!" target="_blank">
+                      <b class="cip--padding-lr-10">ola@codeinpixel.com</b>
+                    </a><br> <br>
             São Paulo - Capital - Brasil <br>
           </address>
 

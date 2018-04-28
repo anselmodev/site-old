@@ -20,6 +20,8 @@ export class ContactComponent implements OnInit {
   titlePageContent: any = 'Contato, Orçamento, Tirar Dúvidas ou uma Consultoria?';
   contactForm: FormGroup;
   dateNow:  any = new Date();
+  msgSuccess = false;
+  loaderSubmit = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -69,18 +71,27 @@ export class ContactComponent implements OnInit {
     InputAnimation(el);
   }
 
-  submitForm(dataForm: ContactModel, form) {
-    dataForm['contact_browser'] =  UserAgent.get('browser', 'name');
-    dataForm['contact_os'] =  UserAgent.get('os', 'name');
-    dataForm['contact_date'] = this.datePipe.transform(this.dateNow, 'yyyy-MM-dd H:mm:ss');
-    // Salvar dados e enviar e-mail
-    this._contactList.setContact(dataForm).then((res) => {
-      if (res === true) {
-        console.log('Enviar email');
-      } else {
-        console.log('Erro ao enviar e-mail. Porém os dados foram salvos.');
-      }
-    });
+  submitForm(dataForm: ContactModel) {
+    if (!this.loaderSubmit) {
+      this.loaderSubmit = true;
+
+      dataForm['contact_browser'] =  UserAgent.get('browser', 'name');
+      dataForm['contact_os'] =  UserAgent.get('os', 'name');
+      dataForm['contact_date'] = this.datePipe.transform(this.dateNow, 'yyyy-MM-dd H:mm:ss');
+      // Salvar dados e enviar e-mail
+      this._contactList.setContact(dataForm).then((res) => {
+        if (res) {
+          this.contactForm.reset();
+          this.msgSuccess = true;
+          this.loaderSubmit = false;
+          setTimeout(() => {
+            this.msgSuccess = false;
+          }, 5000);
+        } else {
+          console.log('Erro ao enviar e-mail. Porém os dados foram salvos.');
+        }
+      });
+    }
   }
 
 }

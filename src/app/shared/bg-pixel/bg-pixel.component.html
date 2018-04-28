@@ -3,7 +3,7 @@
       <div id="bgPixel1" class="_pix_bg_item1 cip--opac-8 cip--rotate-45 cip--pos-absolute"></div>
       <div id="bgPixel2" class="_pix_bg_item2 cip--rotate-45 cip--ovf cip--pos-absolute">
         <img *ngFor="let image of getImagesSection; let idImg = index"
-             src="assets/img/{{ image.file }}" alt="{{ image.alt }}" title="{{ image.title }}"
+             src="{{ image.file }}" alt="{{ image.alt }}" title="{{ image.title }}"
              class="cip--responsive-img cip--opac-2" id="imageBg_{{ idImg }}">
         <div class="_pix_bg_image_color cip--w-100 cip--h-100 cip--pos-absolute"></div>
       </div>

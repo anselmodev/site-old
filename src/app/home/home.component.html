@@ -31,7 +31,7 @@
         <!--Image News-->
         <div class="col-12 col-lg-6 cip--float-left cip--pos-relative">
           <div class="_home_news_image_content cip--rotate-45 cip--pos-relative">
-            <img src="http://via.placeholder.com/450x450/9EAAB8/000000" alt="Novo Trabalho" title="Nome do Trabalho aqui ..." class="cip--responsive-img cip--shadow-z15">
+            <img src="{{ homeWorks.images[0].file }}" alt="{{ homeWorks.images[0].alt }}" title="{{ homeWorks.images[0].title }}" class="cip--responsive-img cip--shadow-z15">
           </div>
           <div class="cip--clearfix"></div>
         </div>
@@ -39,51 +39,23 @@
         <!--Description News-->
         <div class="col-12 col-lg-6 cip--float-left cip--pos-relative">
           <h3 class="_home_news_desc_title cip--tx-smooth cip--txc-logo-blue cip--tx-shadow-white">
-            Nome do Trabalho
+            {{ homeWorks.title }}
           </h3>
 
-          <p class="_home_news_desc_content cip--no-margin cip--padding-lr-5 cip--tx-shadow-white cip--txc-grey-dark cip--tx-smooth">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec viverra purus. Sed ultrices nisi sit
-            amet enim finibus, vitae viverra ligula malesuada. Fusce tellus mauris, scelerisque sit amet orci non,
-            pellentesque pharetra risus. Phasellus a enim at mi luctus vehicula. Nullam non malesuada mauris.
-            Pellentesque non nisi bibendum, maximus orci vel, sodales sapien. Praesent laoreet, dui a eleifend venenatis,
-            risus magna dictum lectus, nec maximus arcu neque a lectus. Morbi tincidunt velit eu augue congue pellentesque.
+          <p class="_home_news_desc_content cip--no-margin cip--padding-lr-5
+                    cip--tx-shadow-white cip--txc-grey-dark cip--tx-smooth" [innerHTML]="homeWorks.description">
           </p>
           <a class="_home_news_desc_link cip--w-100 cip--cur-pointer
                     cip--txc-blue-dark cip--tx-decor-none cip--tx-right cip--fsz-13
-                    cip--padding-tb-15 cip--tx-italic cip--tx-shadow-white cip--tx-smooth">
-            + Mais Detalhes aqui
+                    cip--padding-tb-15 cip--tx-italic cip--tx-shadow-white cip--tx-smooth"
+                    (click)="linkNavigation(homeWorks.link[0].url)" title="{{ homeWorks.link[0].title }}">
+            {{ homeWorks.link[0].label }}
           </a>
-
           <div class="cip--clearfix"></div>
         </div>
-
-
-
-        <!--Description News-->
-        <!--<div class="_home_news_desc_container col-12 col-md-6 cip&#45;&#45;float-right">-->
-          <!--<h2 class="_home_news_desc_title cip&#45;&#45;tx-smooth cip&#45;&#45;txc-logo-blue cip&#45;&#45;tx-shadow-white">Nome do Trabalho</h2>-->
-
-          <!--<p class="_home_news_desc_content cip&#45;&#45;no-margin cip&#45;&#45;padding-lr-5 cip&#45;&#45;tx-shadow-white cip&#45;&#45;txc-grey-dark cip&#45;&#45;tx-smooth">-->
-            <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec viverra purus. Sed ultrices nisi sit-->
-            <!--amet enim finibus, vitae viverra ligula malesuada. Fusce tellus mauris, scelerisque sit amet orci non,-->
-            <!--pellentesque pharetra risus. Phasellus a enim at mi luctus vehicula. Nullam non malesuada mauris.-->
-            <!--Pellentesque non nisi bibendum, maximus orci vel, sodales sapien. Praesent laoreet, dui a eleifend venenatis,-->
-            <!--risus magna dictum lectus, nec maximus arcu neque a lectus. Morbi tincidunt velit eu augue congue pellentesque.-->
-          <!--</p>-->
-          <!--<a class="_home_news_desc_link cip&#45;&#45;w-100 cip&#45;&#45;cur-pointer-->
-                    <!--cip&#45;&#45;txc-blue-dark cip&#45;&#45;tx-decor-none cip&#45;&#45;tx-right cip&#45;&#45;fsz-13-->
-                    <!--cip&#45;&#45;padding-tb-15 cip&#45;&#45;tx-italic cip&#45;&#45;tx-shadow-white cip&#45;&#45;tx-smooth">-->
-          <!--+ Mais Detalhes aqui-->
-          <!--</a>-->
-        <!--</div>-->
-
       </div>
 
     </article>
     <div class="cip--clearfix"></div>
-
-
   </div>
-
   </section>

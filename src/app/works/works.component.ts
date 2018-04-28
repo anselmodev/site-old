@@ -100,7 +100,7 @@ export class WorksComponent implements OnInit {
     this.tmpImg.src = data.url;
   }
 
-  modalGalery(idGalery) {
+  modalGalery(idGalery?) {
     if (!this.statusModal) {
       ModalAnimation.open(`#${this.modalId}`, () => {
         this.workDetailId = workDetails.find(gl => gl.id === idGalery);

@@ -5,42 +5,42 @@ const workList = [
     id: 'wk_00001',
     label: 'Inthus Website ( SPA )',
     title: 'Site Institucional Desenvolvido com Angular 5+',
-    file: 'inthus-pixel-1.png',
+    file: `${CoreConfig.assetsPath}/inthus-pixel-1.png`,
     otherClass: ''
   },
   {
     id: 'wk_00002',
     label: 'Aplicativo BR Cirúrgica',
     title: 'Aplicação Desktop Desenvolvido com React e Electron.Js',
-    file: 'br_cirurgica-pixel-1.png',
+    file: `${CoreConfig.assetsPath}/br_cirurgica-pixel-1.png`,
     otherClass: ''
   },
   {
     id: 'wk_00003',
     label: 'E-commerce SimplyShopp',
     title: 'Sistema de E-commerce com React e React-Native',
-    file: 'simplyshopp-pixel-1.png',
+    file: `${CoreConfig.assetsPath}/simplyshopp-pixel-1.png`,
     otherClass: ''
   },
   {
     id: 'wk_00004',
     label: 'Logotipo Inthus',
     title: 'Logotipo Desenvolvido para Expansão da Marca',
-    file: 'inthus-logo-pixel.png',
+    file: `${CoreConfig.assetsPath}/inthus-logo-pixel.png`,
     otherClass: ''
   },
   {
     id: 'wk_00005',
     label: 'Logotipo Peneirando',
     title: 'Logotipo Revitalizado ( Rebrand )',
-    file: 'peneirando-logo-pixel.png',
+    file: `${CoreConfig.assetsPath}/peneirando-logo-pixel.png`,
     otherClass: ''
   },
   {
     id: 'wk_00006',
     label: 'Logotipo Amantes da Web',
     title: 'Logotipo Desenvolvido para Expansão da Marca',
-    file: 'amantes-logo-pixel.png',
+    file: `${CoreConfig.assetsPath}/amantes-logo-pixel.png`,
     otherClass: ''
   }
 ];

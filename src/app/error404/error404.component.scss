@@ -33,9 +33,34 @@
   display: inline-block;
 }
 
+/*Celulas Menu*/
+._work_cell_pixel{
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+._work_cell_pixel:hover{
+  -webkit-transform: scale(1.1)  rotate(45deg); -moz-transform: scale(1.1)  rotate(45deg); -ms-transform: scale(1.1)  rotate(45deg); -o-transform: scale(1.1)  rotate(45deg); transform: scale(1.1)  rotate(45deg);
+  -webkit-transition-timing-function: ease; transition-timing-function: ease;
+
+}
+._work_cell_pixel:active{
+  -webkit-transform: scale(0.9)  rotate(45deg); -moz-transform: scale(0.9)  rotate(45deg); -ms-transform: scale(0.9)  rotate(45deg); -o-transform: scale(0.9)  rotate(45deg); transform: scale(0.9)  rotate(45deg);
+  -webkit-transition-timing-function: ease; transition-timing-function: ease;
+
+}
+._work_cell{
+  margin: 0 auto 110px auto;
+}
 /* ###################################### MEDIA QUERY ###################################### */
 
 @media (min-width: 576px){
+  ._work_cell_pixel{
+    width: 140px;
+    height: 140px;
+  }
 }
 
 @media (min-width: 768px){
